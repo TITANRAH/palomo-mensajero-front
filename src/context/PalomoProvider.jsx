@@ -5,7 +5,7 @@ import withReactContent from "sweetalert2-react-content";
 
 
 
-const PalomoContext = createContext();
+const PalomoContext = createContext({});
 
 
 function PalomoProvider({ children }) {
@@ -122,7 +122,7 @@ console.log('usuario global desde context', usuarioGlobal)
         arrServicios,
         setUsuarioGlobal,
         MySwal,
-     
+        usuarioGlobal
         
         
       }}
