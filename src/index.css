@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +6,123 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(169, 169, 169, 0.571) !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.banner {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  gap: 1rem;
+  align-items: center;
+
+  color: white;
 }
+.hr-banner {
+  width: 90%;
+  margin: auto;
+}
+
+.contenedor-banner {
+  background-size: contain;
+  background-repeat: repeat;
+  padding: 3rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  
+  url("../src/assets/iconos/palomo-banner.jpeg");
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.titulo h5 {
+  text-decoration: none !important;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(74, 109, 175);
+  padding: 1rem;
+}
+
+.imagen-nav {
+  width: 5rem;
+  height: 5rem;
+  
+  
+}
+
+.titulo h2 {
+  text-decoration: none !important;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+
+.hr-banner {
+  width: 90%;
+  margin: auto;
+
+}
+
+.contenedor-service {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: auto;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.imagen-boton {
+  width: 1.1rem;
+  height: 1.1rem;
+  
+}
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.precio {
+  text-align: center;
+}
+
+.card-title {
+  text-transform: capitalize;
+}
+
+
+
+
+
+.card {
+  width: 17rem;
+}
+
+.carta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 1rem;
+}
+
+
+
+
+
+
