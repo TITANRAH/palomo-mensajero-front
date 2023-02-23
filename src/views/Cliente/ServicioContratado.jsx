@@ -4,7 +4,8 @@ import { formatearFecha } from "../../helpers/formatearFecha";
 import usePalomo from "../../hooks/usePalomo";
 
 export default function ServicioContratado() {
-  const { servicioContratado, setPedido, pedido } = usePalomo();
+  const { servicioContratado, setPedido, pedido, serviciosCarrito } =
+    usePalomo();
   const { id } = useParams();
   const fecha = new Date();
   const fechaFormateada = formatearFecha(fecha);
@@ -17,28 +18,26 @@ export default function ServicioContratado() {
   );
 
   const realizarPedido = () => {
+    const precioServicioPedido = serviciosCarrito.find((s) => {
+      return s.precio === servicioContratado.precio;
+    });
 
-
-    const usuario = JSON.parse(localStorage.getItem("usuario")) 
-
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
 
     const pedidoContratado = {
       id_usuario: usuario.id_usuario,
-      id_servicio: id,
+      id_servicio: parseInt(id),
       id_estado: 1,
       direccion_envio: direccionEnvio,
       fecha_solicitud: fechaFormateada,
       fecha_entrega: "2023/09/09",
-      precio_final: "18990",
+      precio_final: precioServicioPedido.precio,
     };
 
     console.log("pedido", pedidoContratado);
     setDireccionEnvio("");
   };
 
-  // useEffect(()=>{
-
-  // }, [])
 
   return (
     <div className="mt-5">
@@ -55,7 +54,9 @@ export default function ServicioContratado() {
             className="form-control"
             placeholder="Ingresa la dirección"
           />
-          <label className="mt-4"><b>Medio de pago</b></label>
+          <label className="mt-4">
+            <b>Medio de pago</b>
+          </label>
           <div className="row">
             <div className="col-6">
               <label>N° de tarjeta</label>
