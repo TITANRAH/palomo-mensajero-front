@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Registro from "./views/Registro";
@@ -105,5 +105,12 @@ function App() {
 
       {/* </BrowserRouter> */}
     </>
+
+
+
   );
+
+  
 }
+
+export default App;

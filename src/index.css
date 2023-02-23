@@ -57,8 +57,6 @@ body {
 .imagen-nav {
   width: 5rem;
   height: 5rem;
-  
-  
 }
 
 .titulo h2 {
@@ -120,6 +118,9 @@ body {
   flex-wrap: nowrap;
   margin: 1rem;
 }
+
+
+
 
 
 
