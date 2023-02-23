@@ -6,12 +6,13 @@ import { useNavigate } from "react-router-dom";
 function CardService({ servicio }) {
   console.log(servicio.img_src);
   //   const { add } = usePizza();
+  
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-  //   const irPizza = (nombre) => {
-  //     navigate(`/pizza/${nombre}`);
-  //   };
+  const irServicio = (id_servicio) => {
+    console.log(id_servicio);
+    navigate(`/servicio/${id_servicio}`);
+  };
 
   return (
     <div className="carta">
@@ -38,25 +39,16 @@ function CardService({ servicio }) {
           <div className="botones mt-2">
             <button
               className="btn btn-info"
-              //   onClick={() => irPizza(pizza.name)}
+              onClick={() => irServicio(servicio.id_servicio)}
             >
-              Ver Más <img className="imagen-boton" alt="" />
+              Ver Más{" "}
+              <img
+                className="imagen-boton"
+                src={require("../../assets/iconos/ver.png")}
+                alt="ojo"
+              />
             </button>
 
-            <button
-              className="btn btn-danger"
-              onClick={() => {
-
-                console.log('detalleServicio ')
-                navigate('/login')
-
-              }
-               
-              
-              }
-            >
-              Añadir <img className="imagen-boton" src={anadir} alt="" />
-            </button>
           </div>
         </div>
       </div>
