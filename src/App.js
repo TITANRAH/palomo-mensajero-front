@@ -4,6 +4,7 @@ import Home from "./views/Home";
 import Login from "./views/Login";
 import Registro from "./views/Registro";
 import Navbar from "./components/componentes_generales/Navbar";
+import Footer from "./components/componentes_generales/Footer/Footer"
 import Carrito from "./views/Cliente/Carrito";
 import DashboardAdmin from "./views/Admin/DashboardAdmin/DashboardAdmin";
 import DetalleServicio from "./views/Cliente/DetalleServicio";
@@ -138,6 +139,7 @@ function App() {
             }
           /> */}
       </Routes>
+      <Footer/>
 
       {/* </BrowserRouter> */}
     </>
