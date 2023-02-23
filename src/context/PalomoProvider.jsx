@@ -13,6 +13,8 @@ function PalomoProvider({ children }) {
   const [servicioSel, setServicioSel] = useState({});
   const [serviciosCarrito, setServiciosCarrito] = useState([]);
   const [servicioContratado, setServicioContratado] = useState({});
+  const [pedido, setPedido] = useState([]);
+  
   const totalComprasServicios = serviciosCarrito.reduce(
     (a, s) => a + s.precio * s.count,
     0
@@ -138,6 +140,8 @@ function PalomoProvider({ children }) {
         totalComprasServicios,
         setServicioContratado,
         servicioContratado,
+        pedido,
+        setPedido
       }}
     >
       {children}
