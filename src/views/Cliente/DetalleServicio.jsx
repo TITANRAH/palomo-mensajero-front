@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import usePalomo from "../../hooks/usePalomo";
 import { useNavigate } from "react-router-dom";
+import anadir from "../../assets/iconos/anadir.png";
 
 export default function DetalleServicio() {
   const { id } = useParams();
@@ -71,7 +72,7 @@ export default function DetalleServicio() {
                   className="btn btn-danger"
                   onClick={() => add(servicioSel)}
                 >
-                  Añadir <img className="imagen-boton" src={""} alt="" />
+                  Añadir <img className="imagen-boton" src={anadir} alt="" />
                 </button>
               </div>
             </div>

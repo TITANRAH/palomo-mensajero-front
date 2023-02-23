@@ -1,4 +1,4 @@
-import anadir from "../../assets/iconos/anadir.png";
+
 // import pizzaBoton from "../assets/pizza.png";
 import { useNavigate } from "react-router-dom";
 // import usePalomo from "../../hooks/usePalomo";

@@ -215,6 +215,9 @@ body {
 .detalle-botones {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
   gap: 1rem;
 }
 

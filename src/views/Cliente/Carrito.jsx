@@ -4,7 +4,7 @@ import usePalomo from "../../hooks/usePalomo";
 export default function Carrito() {
   const {
     serviciosCarrito,
-    add,
+    // add,
     setServiciosCarrito,
     restar,
     totalComprasServicios,
@@ -22,7 +22,7 @@ export default function Carrito() {
     console.log("id_categoria", id_categoria);
 
     const categoria = serviciosCarrito.find((s) => {
-      return s.id_categoria == id_categoria;
+      return s.id_categoria === id_categoria;
     });
 
     console.log("categoria", categoria.id_categoria);
@@ -32,6 +32,8 @@ export default function Carrito() {
         return "DESAYUNOS";
       case 2:
         return "SERENATASsss";
+      default: 
+               return
     }
   };
 
@@ -71,29 +73,29 @@ export default function Carrito() {
                     </div>
 
                     <div className="detalle-botones">
-                      <h3>{s.precio * s.count}</h3>
+                    
 
-                      <button
+                      {/* <button
                         onClick={() => add(s)}
                         className="btn btn-success"
                       >
                         +
-                      </button>
+                      </button> */}
 
-                      <h3>{s.count}</h3>
+                      <h3> Llevas {s.count} servicio de {s.titulo} que cuesta $ {s.precio}</h3>
 
                       <button
-                        onClick={() => restar(s)}
-                        className="btn btn-success"
+                        onClick={() => restar(s.id_servicio)}
+                        className="btn btn-danger ml-5"
                       >
-                        -
+                        QUITAR
                       </button>
 
                       <button
                         onClick={()=>contratarServicio(s)}
-                        className="btn btn-warning ml-3"
+                        className="btn btn-warning"
                       >
-                        PAGAR SERVICIO
+                        PAGAR
                       </button>
                     </div>
                   </div>
@@ -118,7 +120,7 @@ export default function Carrito() {
                 onClick={() => setServiciosCarrito([])}
                 className="btn btn-danger"
               >
-                Eliminar Compras
+                ELIMINAR COMPRAS
               </button>
             </div>
           ) : (

@@ -64,33 +64,22 @@ function PalomoProvider({ children }) {
   // };
 
   function add(servicio) {
-    let irCarrito;
     const existe = serviciosCarrito.find(
       (s) => s.id_servicio === servicioSel.id_servicio
     );
 
     if (existe) {
       MySwal.fire({
-        title: (
-          <strong>
-            Llevas {existe.count + 1} servicios de {existe.titulo} en tu carrito
-          </strong>
-        ),
+        title: <strong>Alerta</strong>,
         html: (
           <i>
-            Estos servicios estan en estado "en curso", gracias por tu
-            preferencia.
+            El servicio de {existe.titulo} ya esta agregado a tu carrito.
+            <b>SERÁS REDIRIGIDO A HOME !</b>
           </i>
         ),
-        icon: "success",
+        icon: "warning",
       }).then(() => {
-        setServiciosCarrito(
-          serviciosCarrito.map((s) =>
-            s.id_servicio === servicio.id_servicio
-              ? { ...existe, count: existe.count + 1 }
-              : s
-          )
-        );
+        navigate("/");
       });
     } else {
       MySwal.fire({
@@ -113,35 +102,21 @@ function PalomoProvider({ children }) {
     }
   }
 
-  function restar(servicio) {
-    const existe = serviciosCarrito.find(
-      (s) => s.id_servicio === servicio.id_servicio
-    );
+  function restar(id_servicio) {
+    const existe = serviciosCarrito.find((s) => s.id_servicio === id_servicio);
 
-    if (existe.count === 1) {
+    if (existe) {
       MySwal.fire({
         title: (
-          <strong>
-            Eliminaste el servicio {servicio.titulo} de tu carrito
-          </strong>
+          <strong>Eliminaste el servicio {existe.titulo} de tu carrito</strong>
         ),
         html: <i>Vuelve a solcitarlo!</i>,
         icon: "warning",
       }).then(() => {
         setServiciosCarrito(
-          serviciosCarrito.filter((s) => s.id_servicio !== s.id_servicio)
+          serviciosCarrito.filter((s) => s.id_servicio !== existe.id_servicio)
         );
       });
-    } else {
-      setServiciosCarrito(
-        serviciosCarrito.map((s) =>
-          s.id_servicio === servicio.id_servicio
-            ? { ...existe, count: existe.count - 1 }
-            : s
-        )
-      );
-
-      console.log("serviciosCarrito desde context", serviciosCarrito);
     }
   }
 
@@ -162,7 +137,7 @@ function PalomoProvider({ children }) {
         setServiciosCarrito,
         totalComprasServicios,
         setServicioContratado,
-        servicioContratado
+        servicioContratado,
       }}
     >
       {children}
