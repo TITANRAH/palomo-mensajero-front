@@ -17,8 +17,13 @@ export default function ServicioContratado() {
   );
 
   const realizarPedido = () => {
+
+
+    const usuario = JSON.parse(localStorage.getItem("usuario")) 
+
+
     const pedidoContratado = {
-      id_usuario: 2,
+      id_usuario: usuario.id_usuario,
       id_servicio: id,
       id_estado: 1,
       direccion_envio: direccionEnvio,
