@@ -41,7 +41,9 @@ export default function Carrito() {
 
     setServicioContratado(servicio)
 
-    navigate('/servicio_contratado')
+    console.log('id servicio', servicio.id_servicio)
+
+    navigate(`/servicio_contratado/${servicio.id_servicio}`)
   }
 
   return (

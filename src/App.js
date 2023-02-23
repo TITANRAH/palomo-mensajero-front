@@ -55,7 +55,7 @@ function App() {
         />
 
         <Route
-          path="/servicio_contratado"
+          path="/servicio_contratado/:id"
           element={
             <Protected requirements={usuarioGlobal.id_rol === 1}>
               <ServicioContratado />
