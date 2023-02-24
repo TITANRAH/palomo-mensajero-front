@@ -47,7 +47,9 @@ export default function DetalleServicio() {
   return (
     <>
       {servicioSel !== {} ? (
-        <div className="servicio-unique-contenedor mt-3 m-3">
+        <div className="contenedor">
+
+<div className="servicio-unique-contenedor mt-3 m-3">
           <div className="row servicio-palomo">
             <div className="col-5">
               <img
@@ -78,6 +80,8 @@ export default function DetalleServicio() {
             </div>
           </div>
         </div>
+        </div>
+     
       ) : (
         <div></div>
       )}
