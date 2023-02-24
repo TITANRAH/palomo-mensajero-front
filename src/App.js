@@ -4,7 +4,7 @@ import Home from "./views/Home";
 import Login from "./views/Login";
 import Registro from "./views/Registro";
 import Navbar from "./components/componentes_generales/Navbar";
-import Footer from "./components/componentes_generales/Footer/Footer"
+import Footer from "./components/componentes_generales/Footer/Footer";
 import Carrito from "./views/Cliente/Carrito";
 import DashboardAdmin from "./views/Admin/DashboardAdmin/DashboardAdmin";
 import DetalleServicio from "./views/Cliente/DetalleServicio";
@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import DashboardMensajero from "./views/Mensajero/DashboardMensajero";
 import Protected from "./utils/Protected";
 import ServicioContratado from "./views/Cliente/ServicioContratado";
+import MisPedidos from "./views/Cliente/MisPedidos";
 
 function App() {
   const { usuarioGlobal, setUsuarioGlobal } = usePalomo();
@@ -60,6 +61,15 @@ function App() {
           element={
             <Protected requirements={usuarioGlobal.id_rol === 1}>
               <ServicioContratado />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/mis_pedidos/:id"
+          element={
+            <Protected requirements={usuarioGlobal.id_rol === 1}>
+              <MisPedidos />
             </Protected>
           }
         />
@@ -139,7 +149,7 @@ function App() {
             }
           /> */}
       </Routes>
-      <Footer/>
+      <Footer />
 
       {/* </BrowserRouter> */}
     </>

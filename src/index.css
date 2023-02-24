@@ -300,6 +300,17 @@ body {
   text-align: center;
 }
 
+.tabla-datos{
+
+ 
+  padding: 5rem;
+ 
+}
+
+.table {
+  border: 1px solid;
+}
+
 .card-title {
   text-transform: capitalize;
 }

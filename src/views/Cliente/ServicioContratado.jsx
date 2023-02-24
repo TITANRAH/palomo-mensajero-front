@@ -5,17 +5,34 @@ import { formatearFecha } from "../../helpers/formatearFecha";
 import usePalomo from "../../hooks/usePalomo";
 
 export default function ServicioContratado() {
-  const { servicioContratado, setPedido, pedido, serviciosCarrito } =
-    usePalomo();
+  const { servicioContratado, MySwal, serviciosCarrito } = usePalomo();
   const { id } = useParams();
   const fecha = new Date();
   const fechaFormateada = formatearFecha(fecha);
   const [direccionEnvio, setDireccionEnvio] = useState("");
   const navigate = useNavigate();
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
   console.log("id_servicio", fechaFormateada);
   console.log("servicioContratado desde servicios contratados", fecha);
-  
+
+  function swal() {
+    MySwal.fire({
+      title: <strong>Felicitaciones, Tu servicio ya esta en camino !</strong>,
+      html: <i>Ve a tus pedidos y checkea el estado !</i>,
+      icon: "success",
+    }).then(() => {
+      navigate(`/mis_pedidos/${usuario.id_usuario}`);
+    });
+  }
+
+  function swalError() {
+    MySwal.fire({
+      title: <strong>Algo salio mal!</strong>,
+      html: <i>Vuelve a intentarlo!</i>,
+      icon: "error",
+    }).then(() => {});
+  }
 
   const realizarPedido = async () => {
     const urlServer =
@@ -25,7 +42,6 @@ export default function ServicioContratado() {
       return s.precio === servicioContratado.precio;
     });
 
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
     const token = localStorage.getItem("token");
 
     const pedidoContratado = {
@@ -45,12 +61,14 @@ export default function ServicioContratado() {
       const resp = await axios.post(urlServer + endpoint, pedidoContratado, {
         headers: { Authorization: "Bearer " + token },
       });
-      alert("Pedido realizado correctamente");
-      console.log(resp.data);
-      // navigate("/login");
+
+      if (resp.status === 200) {
+        swal();
+      } else {
+        swalError();
+      }
     } catch (error) {
-      alert("Algo salió mal ...");
-      console.log(error);
+      swalError();
     }
 
     console.log("pedido", pedidoContratado);
@@ -114,7 +132,7 @@ export default function ServicioContratado() {
         </button>
 
         <button
-          onClick={() => navigate('/mis-pedidos')}
+          onClick={() => navigate(`/mis_pedidos/${usuario.id_usuario}`)}
           className="btn btn-success mt-3"
         >
           IR A MIS PEDIDOS
