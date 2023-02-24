@@ -13,8 +13,8 @@ function PalomoProvider({ children }) {
   const [servicioSel, setServicioSel] = useState({});
   const [serviciosCarrito, setServiciosCarrito] = useState([]);
   const [servicioContratado, setServicioContratado] = useState({});
-  const [pedido, setPedido] = useState([]);
-  
+  const [misPedidos, setMisPedidos] = useState([]);
+
   const totalComprasServicios = serviciosCarrito.reduce(
     (a, s) => a + s.precio * s.count,
     0
@@ -64,6 +64,38 @@ function PalomoProvider({ children }) {
   //     console.log(message);
   //   }
   // };
+
+  async function getPedidos(id_usuario) {
+    const urlServer =
+      "https://proyecto-final-back-production-045b.up.railway.app";
+    const endpoint = `/servicio_contratado/${id_usuario}`;
+    const token = localStorage.getItem("token");
+    const resp = await axios.get(urlServer + endpoint,{
+      headers: { Authorization: "Bearer " + token },
+     
+    });
+
+    if (resp.status === 200) {
+      setMisPedidos(resp.data);
+    } else {
+      MySwal.fire({
+        title: (
+          <strong>
+            Error !
+          </strong>
+        ),
+        html: (
+          <i>
+            No se pudieron obtener los pedidos del usuario.
+          </i>
+        ),
+        icon: "success",
+      }).then(() => {
+      navigate('/misPedidos');
+      });
+
+    }
+  }
 
   function add(servicio) {
     const existe = serviciosCarrito.find(
@@ -140,8 +172,9 @@ function PalomoProvider({ children }) {
         totalComprasServicios,
         setServicioContratado,
         servicioContratado,
-        pedido,
-        setPedido
+        misPedidos,
+        setMisPedidos,
+        getPedidos
       }}
     >
       {children}

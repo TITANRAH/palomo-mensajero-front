@@ -31,7 +31,7 @@ export default function Carrito() {
       case 1:
         return "DESAYUNOS";
       case 2:
-        return "SERENATASsss";
+        return "SERENATAS";
       default: 
                return
     }

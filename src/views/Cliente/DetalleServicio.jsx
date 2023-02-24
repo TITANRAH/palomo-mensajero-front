@@ -16,7 +16,7 @@ export default function DetalleServicio() {
 
   function swal() {
     MySwal.fire({
-      title: <strong>No encontramos ninguna pizza con ese nombre!</strong>,
+      title: <strong>No encontramos ningun servicio con ese nombre!</strong>,
       html: <i>Serás dirigido a Home !</i>,
       icon: "error",
     }).then(() => {
