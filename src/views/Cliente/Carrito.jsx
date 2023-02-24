@@ -46,6 +46,8 @@ export default function Carrito() {
     navigate(`/servicio_contratado/${servicio.id_servicio}`)
   }
 
+  
+
   return (
     <>
       <div className="detalle-contenedor mt-5 p-4">
