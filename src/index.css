@@ -18,49 +18,49 @@ body {
   justify-content: space-between;
 }
 
-.eliminar-compras{
+.eliminar-compras {
 
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  }
-  
-  .total-pagar button{
-    width: 10rem;
-  }
+}
 
-  .active {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-  }
-  
-  .active:hover {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    
-  }
-  
-  .no-active {
-    color: rgb(180, 180, 183);
-    text-decoration: none;
-  }
- 
-  .no-active:hover {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-  }
+.total-pagar button {
+  width: 10rem;
+}
 
-  .categoria {
-    margin-left: 1rem;
-    
-  }
-  
-  .carrito-vacío img {
-    width: 4rem;
-    height: 4rem;
-    cursor: pointer;
-  }
+.active {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.active:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+}
+
+.no-active {
+  color: rgb(180, 180, 183);
+  text-decoration: none;
+}
+
+.no-active:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.categoria {
+  margin-left: 1rem;
+
+}
+
+.carrito-vacío img {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
 
 .banner {
   flex-direction: column;
@@ -71,6 +71,7 @@ body {
 
   color: white;
 }
+
 .hr-banner {
   width: 90%;
   margin: auto;
@@ -84,6 +85,23 @@ body {
     url("../src/assets/iconos/palomo-banner.jpeg");
 }
 
+.titulo h5 {
+  text-decoration: none !important;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Navbar */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgb(74, 109, 175);
+  padding: 1rem;
+  height: 13vh;
+}
+
 .titulo {
   display: flex;
   flex-direction: row;
@@ -92,31 +110,164 @@ body {
   margin-left: 5rem;
 }
 
-.titulo h5 {
-  text-decoration: none !important;
-  font-weight: 600;
-  margin: 0;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: rgb(74, 109, 175);
-  padding: 1rem;
-}
-
 .imagen-nav {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 }
 
-.titulo h2 {
+.titulo h3 {
   text-decoration: none !important;
   font-weight: 600;
   color: white;
   margin: 0;
 }
+
+.form-cont-login {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  width: 18%;
+  margin-left: 20vh;
+}
+
+.form-tit-navbar {
+  text-decoration: none !important;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.carrito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+  justify-content: center;
+}
+
+.cont-titulo-car {
+  text-decoration: none !important;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  width: 30%;
+}
+
+.cont-img-car {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-img-car {
+  color: white;
+  width: 7vh;
+  height: 7vh;
+}
+
+@media (max-width: 767px) {
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    height: 13vh;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .titulo {
+    width: 45vh;
+    display: flex;
+    margin-left: 0;
+  }
+
+  .imagen-nav {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .titulo h3 {
+    font-size: large;
+  }
+
+  .form-cont-login {
+
+    width: 21vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+
+  .form-tit-navbar {
+    font-size: medium;
+  }
+
+  .carrito {
+    width: 30vh;
+
+  }
+
+  .cont-titulo-car {
+    font-size: medium;
+    display: flex;
+
+  }
+
+  .form-img-car {
+    width: 6vh;
+    height: 6vh;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    height: 13vh;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .titulo {
+    width: 55vh;
+    margin-left: 0;
+  }
+
+  .imagen-nav {
+    width: 9vh;
+    height: 9vh;
+  }
+
+  .titulo h3 {
+    font-size: x-large;
+  }
+
+  .form-cont-login {
+
+    width: 30vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 6vh;
+  }
+
+  .form-tit-navbar {
+    font-size: x-large;
+  }
+
+  .carrito {
+    width: 30vh;
+    gap: 0;
+  }
+
+  .cont-titulo-car {
+    font-size: medium;
+
+  }
+}
+
 
 .hr-banner {
   width: 90%;
@@ -206,6 +357,7 @@ body {
 .detalle li {
   padding: 2rem;
 }
+
 .detalle-compra {
   display: flex;
   flex-direction: row;
