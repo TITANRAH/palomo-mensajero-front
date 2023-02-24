@@ -228,3 +228,12 @@ body {
   gap: 1rem;
   align-items: center;
 }
+
+.dashboardMensajero{
+  border-radius: 1%;
+  border:solid grey 0.3mm;
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}

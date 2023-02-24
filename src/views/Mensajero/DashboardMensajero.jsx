@@ -11,10 +11,10 @@ export default function DashboardMensajero() {
     return (
       <div className="container py-5 h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
-      <div className="card rounded-3 ml-6" style={{ width: '30rem' }} >
+      <div className="dashboardMensajero">
       
-       <h1 className="text-center my-3 pb-3">Estatus de Servicios</h1>
-       <table className="table mb-4">
+       <h3 className="text-center my-3 pb-3">Estatus de Servicios</h3>
+       <table className="table mb-4 text-center table-hover">
                     <thead>
                       <tr>
                         <th scope="col">ID</th>

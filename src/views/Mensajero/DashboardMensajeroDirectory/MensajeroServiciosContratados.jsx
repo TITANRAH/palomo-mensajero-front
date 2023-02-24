@@ -9,7 +9,7 @@ function MensajeroServiciosContratados({ servicio }) {
       <td>{servicio.descripcion}</td>
       <td>
         <button type="submit" className="btn btn-success">
-          EN CURSO
+          CONTRATADO
         </button>
       </td>
     </>
