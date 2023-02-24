@@ -8,7 +8,7 @@ export default function Carrito() {
     setServiciosCarrito,
     restar,
     totalComprasServicios,
-    setServicioContratado
+    setServicioContratado,
   } = usePalomo();
 
   const navigate = useNavigate();

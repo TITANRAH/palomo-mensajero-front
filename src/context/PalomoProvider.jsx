@@ -43,57 +43,25 @@ function PalomoProvider({ children }) {
     } catch (error) {}
   };
 
-  // const getUsuarioData = async () => {
-  //   const urlServer = "https://desafio6nodesoft-production.up.railway.app";
-  //   const endpoint = "/usuarios";
-  //   const token = localStorage.getItem("token");
-  //   console.log('token desde front',token)
-
-  //   try {
-  //     const {data} = await axios.get(urlServer + endpoint, {
-  //       headers: { Authorization: "Bearer " + token },
-  //     });
-
-  //     console.log('data desde front', data)
-  //     await setUsuario(data);
-  //   //   await setUsuariol(data[0]);
-
-  //     console.log('data:',usuario)
-  //   } catch ({ response: { data: message } }) {
-  //     alert(message + " 🙁");
-  //     console.log(message);
-  //   }
-  // };
-
   async function getPedidos(id_usuario) {
     const urlServer =
       "https://proyecto-final-back-production-045b.up.railway.app";
     const endpoint = `/servicio_contratado/${id_usuario}`;
     const token = localStorage.getItem("token");
-    const resp = await axios.get(urlServer + endpoint,{
+    const resp = await axios.get(urlServer + endpoint, {
       headers: { Authorization: "Bearer " + token },
-     
     });
 
     if (resp.status === 200) {
       setMisPedidos(resp.data);
     } else {
       MySwal.fire({
-        title: (
-          <strong>
-            Error !
-          </strong>
-        ),
-        html: (
-          <i>
-            No se pudieron obtener los pedidos del usuario.
-          </i>
-        ),
+        title: <strong>Error !</strong>,
+        html: <i>No se pudieron obtener los pedidos del usuario.</i>,
         icon: "success",
       }).then(() => {
-      navigate('/misPedidos');
+        navigate("/misPedidos");
       });
-
     }
   }
 
@@ -154,6 +122,14 @@ function PalomoProvider({ children }) {
     }
   }
 
+  function restarPagado(id_servicio) {
+    const existe = serviciosCarrito.find((s) => s.id_servicio === id_servicio);
+
+    setServiciosCarrito(
+      serviciosCarrito.filter((s) => s.id_servicio !== existe.id_servicio)
+    );
+  }
+
   return (
     <PalomoContext.Provider
       value={{
@@ -174,7 +150,8 @@ function PalomoProvider({ children }) {
         servicioContratado,
         misPedidos,
         setMisPedidos,
-        getPedidos
+        getPedidos,
+        restarPagado
       }}
     >
       {children}
