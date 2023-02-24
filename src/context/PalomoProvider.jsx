@@ -43,28 +43,6 @@ function PalomoProvider({ children }) {
     } catch (error) {}
   };
 
-  // const getUsuarioData = async () => {
-  //   const urlServer = "https://desafio6nodesoft-production.up.railway.app";
-  //   const endpoint = "/usuarios";
-  //   const token = localStorage.getItem("token");
-  //   console.log('token desde front',token)
-
-  //   try {
-  //     const {data} = await axios.get(urlServer + endpoint, {
-  //       headers: { Authorization: "Bearer " + token },
-  //     });
-
-  //     console.log('data desde front', data)
-  //     await setUsuario(data);
-  //   //   await setUsuariol(data[0]);
-
-  //     console.log('data:',usuario)
-  //   } catch ({ response: { data: message } }) {
-  //     alert(message + " 🙁");
-  //     console.log(message);
-  //   }
-  // };
-
   async function getPedidos(id_usuario) {
     const urlServer =
       "https://proyecto-final-back-production-045b.up.railway.app";

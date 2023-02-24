@@ -132,13 +132,6 @@ export default function ServicioContratado() {
         >
           PAGAR
         </button>
-
-        <button
-          onClick={() => navigate(`/mis_pedidos/${usuario.id_usuario}`)}
-          className="btn btn-success mt-3"
-        >
-          IR A MIS PEDIDOS
-        </button>
       </div>
     </div>
   );
