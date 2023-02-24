@@ -7,14 +7,14 @@ function Footer() {
     return (
         <footer className=" bd-footer form-footer">
             <div className="border-bottom">
-                <di className="form-cont-rs-mp ">
+                <div className="form-cont-rs-mp ">
                     <FaFacebook className='form-img-icons' />
                     <FaInstagram className='form-img-icons' />
                     <FaTwitter className='form-img-icons' />
                     <FaWhatsapp className='form-img-icons' />
                     <FaBtc className='form-img-icons' />
                     <FaCreditCard className='form-img-icons' />
-                </di>
+                </div>
             </div>
             <div className="form-cont-da">
                 <h6 className="form-texto">©2023 Derechos de Autor  </h6>
