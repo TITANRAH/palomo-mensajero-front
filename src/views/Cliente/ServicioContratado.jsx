@@ -82,7 +82,7 @@ export default function ServicioContratado() {
   };
 
   return (
-    <div className="mt-5">
+    <div className="servicio-contratado mt-5">
       <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
         <h1>Direccíon de envío</h1>
         <hr />
