@@ -5,7 +5,8 @@ import { formatearFecha } from "../../helpers/formatearFecha";
 import usePalomo from "../../hooks/usePalomo";
 
 export default function ServicioContratado() {
-  const { servicioContratado, MySwal, serviciosCarrito } = usePalomo();
+  const { servicioContratado, MySwal, serviciosCarrito, restarPagado } =
+    usePalomo();
   const { id } = useParams();
   const fecha = new Date();
   const fechaFormateada = formatearFecha(fecha);
@@ -22,6 +23,7 @@ export default function ServicioContratado() {
       html: <i>Ve a tus pedidos y checkea el estado !</i>,
       icon: "success",
     }).then(() => {
+      restarPagado(parseInt(id));
       navigate(`/mis_pedidos/${usuario.id_usuario}`);
     });
   }
@@ -82,7 +84,7 @@ export default function ServicioContratado() {
   };
 
   return (
-    <div className="mt-5">
+    <div className="servicio-contratado mt-5">
       <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
         <h1>Direccíon de envío</h1>
         <hr />
@@ -129,13 +131,6 @@ export default function ServicioContratado() {
           className="btn btn-success mt-3"
         >
           PAGAR
-        </button>
-
-        <button
-          onClick={() => navigate(`/mis_pedidos/${usuario.id_usuario}`)}
-          className="btn btn-success mt-3"
-        >
-          IR A MIS PEDIDOS
         </button>
       </div>
     </div>

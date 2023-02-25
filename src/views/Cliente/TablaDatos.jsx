@@ -1,7 +1,9 @@
-import { useEffect } from "react";
-import usePalomo from "../../hooks/usePalomo";
+
+
 
 export default function TablaDatos({ servicioCon }) {
+
+  
   return (
     <>
       <table className="table">
