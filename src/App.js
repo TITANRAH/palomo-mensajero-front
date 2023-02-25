@@ -97,9 +97,9 @@ function App() {
         <Route
           path="/dashboardAdmin"
           element={
-            <Protected requirements={usuarioGlobal.id_rol === 3}>
+            // <Protected requirements={usuarioGlobal.id_rol === 3}>
               <DashboardAdmin />
-            </Protected>
+            // </Protected>
           }
         />
 

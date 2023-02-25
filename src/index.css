@@ -430,3 +430,32 @@ body {
   margin-left: 5px;
 }
 
+/* dashboardadmin */
+.dashboardadmin {
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 69vh;
+}
+
+.caja-admin{
+  margin:3rem 1.5rem 3rem;
+}
+
+.card img{
+
+
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
+
+}
+
+.imagen-dashAdmin{
+
+  display: flex;
+  justify-content: center;
+}
+

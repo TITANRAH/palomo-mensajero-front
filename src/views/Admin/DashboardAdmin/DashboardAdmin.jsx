@@ -1,56 +1,43 @@
 import usePalomo from "../../../hooks/usePalomo";
-import "../../../index.css";
-import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import CajaDashboardAdmin from "./admin_components/CajaDashboardAdmin";
+import admin_crear_rol from "../../../assets/iconos/admin_crear_rol.png"
+import admin_rol from "../../../assets/iconos/admin_rol.png"
+import admin_service from "../../../assets/iconos/admin_service.png"
+import admin_services from "../../../assets/iconos/admin_services.png"
+
 
 export default function DashboardAdmin() {
   const { getServices } = usePalomo();
   const navigate = useNavigate();
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-active");
 
-  useEffect(() => {
-    getServices();
-  }, []);
+  // useEffect(() => {
+  //   getServices();
+  // }, []);
+
+  const adminRol = "Administrar roles";
+  const createRol = "Crear roles";
+  const adminServ = "Administrar servicios";
+  const createServ = "Crear servicios";
 
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-4">
-      <div className="col" onClick={() => navigate("/admin_roles")}>
-       
-      </div>
-      <div className="col" onClick={() => navigate("/crear_roles_admin")}>
-        <div className="card h-100">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Ingresa aquí para crear roles</h5>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </div>
+    <div className="dashboardadmin">
+      <div >
+        <div className="caja-admin" onClick={() => navigate("/admin_roles")}>
+          <CajaDashboardAdmin titulo={adminRol} icono = {admin_crear_rol} />
+        </div>
+        <div className="caja-admin" onClick={() => navigate("/crear_roles_admin")}>
+          <CajaDashboardAdmin titulo={createRol} icono = {admin_rol} />
         </div>
       </div>
-      <div className="col" onClick={() => navigate("/admin_servicios")}>
-        <div className="card h-100">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">
-              Ingresa aquí para administar servicios
-            </h5>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </div>
+
+      <div >
+        <div className="caja-admin" onClick={() => navigate("/admin_servicios")}>
+          <CajaDashboardAdmin titulo={adminServ} icono = {admin_service}/>
         </div>
-      </div>
-      <div className="col" onClick={() => navigate("/crear_servicios_Admin")}>
-        <div className="card h-100">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Ingresa aquí para crear servicios</h5>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </div>
+        <div className="caja-admin" onClick={() => navigate("/crear_servicios_Admin")}>
+          <CajaDashboardAdmin titulo={createServ} icono = {admin_services}/>
         </div>
       </div>
     </div>
