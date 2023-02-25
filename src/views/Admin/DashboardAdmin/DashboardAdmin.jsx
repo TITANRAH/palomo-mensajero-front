@@ -8,14 +8,8 @@ import admin_services from "../../../assets/iconos/admin_services.png"
 
 
 export default function DashboardAdmin() {
-  const { getServices } = usePalomo();
+
   const navigate = useNavigate();
-  const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-active");
-
-  // useEffect(() => {
-  //   getServices();
-  // }, []);
-
   const adminRol = "Administrar roles";
   const createRol = "Crear roles";
   const adminServ = "Administrar servicios";

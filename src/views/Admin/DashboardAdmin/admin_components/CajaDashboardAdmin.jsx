@@ -1,7 +1,7 @@
 export default function ({ titulo, icono }) {
   return (
     <>
-      <div className="card h-100">
+      <div className="card h-100 caja-admin-dash">
         <div className="imagen-dashAdmin">
           <img src={icono} className="card-img-top" alt="..." />
         </div>

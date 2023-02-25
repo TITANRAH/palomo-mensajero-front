@@ -441,7 +441,12 @@ body {
 }
 
 .caja-admin{
+  cursor:pointer;
   margin:3rem 1.5rem 3rem;
+}
+
+.caja-admin-dash:hover{
+  background-color: rgb(50, 176, 176);
 }
 
 .card img{

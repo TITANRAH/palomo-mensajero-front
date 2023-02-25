@@ -106,44 +106,44 @@ function App() {
         <Route
           path="/admin_roles"
           element={
-            <Protected requirements={usuarioGlobal.id_rol === 3}>
+            // <Protected requirements={usuarioGlobal.id_rol === 3}>
               <AdminRoles />
-            </Protected>
+            // </Protected>
           }
         />
 
         <Route
           path="/crear_roles_admin"
           element={
-            <Protected requirements={usuarioGlobal.id_rol === 3}>
+            // <Protected requirements={usuarioGlobal.id_rol === 3}>
               <CrearRoles />
-            </Protected>
+            // </Protected>
           }
         />
 
         <Route
           path="/admin_servicios"
           element={
-            <Protected requirements={usuarioGlobal.id_rol === 3}>
+            // <Protected requirements={usuarioGlobal.id_rol === 3}>
               <AdminServicios />
-            </Protected>
+            // </Protected>
           }
         />
 
         <Route
           path="/crear_servicios_Admin"
           element={
-            <Protected requirements={usuarioGlobal.id_rol === 3}>
+            // <Protected requirements={usuarioGlobal.id_rol === 3}>
               <CrearServicioAdmin />
-            </Protected>
+            // </Protected>
           }
         />
         <Route
           path="/dashboardMensajero"
           element={
-            <Protected requirements={usuarioGlobal.id_rol === 2}>
+            // <Protected requirements={usuarioGlobal.id_rol === 2}>
               <DashboardMensajero />
-            </Protected>
+            // </Protected>
           }
         />
 
