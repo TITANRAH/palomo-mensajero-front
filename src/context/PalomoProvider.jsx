@@ -15,6 +15,7 @@ function PalomoProvider({ children }) {
   const [servicioContratado, setServicioContratado] = useState([]);
   const [misPedidos, setMisPedidos] = useState([]);
   const [roles, setRoles] = useState([]);
+  const [servicios, setServicios] = useState([]);
 
   const totalComprasServicios = serviciosCarrito.reduce(
     (a, s) => a + s.precio * s.count,
@@ -41,7 +42,7 @@ function PalomoProvider({ children }) {
 
         console.log("respuesta de api", response);
       });
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getContractServices = async () => {
@@ -51,17 +52,17 @@ function PalomoProvider({ children }) {
       const options = {
         method: "GET",
         url: `https://proyecto-final-back-production-045b.up.railway.app/todos_servicios_contratados`,
-        
-          headers: { Authorization: "Bearer " + token },
-        
+
+        headers: { Authorization: "Bearer " + token },
+
       };
 
-        await axios.request(options).then((response) => {
+      await axios.request(options).then((response) => {
         setServicioContratado(response.data);
 
         console.log("respuesta de api", response);
       });
-    } catch (error) {}
+    } catch (error) { }
   };
 
   /*GET ROLES*/
@@ -88,9 +89,29 @@ function PalomoProvider({ children }) {
     }
   }
 
+  /*GET SERVICIOS*/
 
+  async function getServicios() {
+    const urlServer =
+      "https://proyecto-final-back-production-045b.up.railway.app";
+    const endpoint = "/servicios";
+    const token = localStorage.getItem("token");
+    const resp = await axios.get(urlServer + endpoint, {
+      headers: { Authorization: "Bearer " + token },
+    });
 
-
+    if (resp.status === 200) {
+      setServicios(resp.data);
+    } else {
+      MySwal.fire({
+        title: <strong>Error !</strong>,
+        html: <i>No se pudieron obtener los servicios.</i>,
+        icon: "warning",
+      }).then(() => {
+        navigate("/dashboardAdmin");
+      });
+    }
+  }
 
   async function getPedidos(id_usuario) {
     const urlServer =
@@ -179,6 +200,34 @@ function PalomoProvider({ children }) {
     );
   }
 
+  async function editarServicio(id_servicio){
+    const urlServer =
+      "https://proyecto-final-back-production-045b.up.railway.app";
+    const endpoint = "/servicios";
+    const token = localStorage.getItem("token");
+    const resp = await axios.get(urlServer + endpoint, {
+      headers: { Authorization: "Bearer " + token },
+    });
+    
+    if (resp.status === 200) {
+      setServicios(resp.data);
+      console.log(servicios)
+    } else {
+      MySwal.fire({
+        title: <strong>Error !</strong>,
+        html: <i>No se logro actualizar el servicio.</i>,
+        icon: "warning",
+      }).then(() => {
+        navigate("/dashboarServicio");
+      });
+    }
+    
+  }
+
+  function eliminarServicio(id_servicio){
+    
+  }
+
   return (
     <PalomoContext.Provider
       value={{
@@ -203,7 +252,11 @@ function PalomoProvider({ children }) {
         restarPagado,
         getContractServices,
         getRoles,
-        roles
+        roles,
+        getServicios,
+        servicios,
+        editarServicio,
+        eliminarServicio
       }}
     >
       {children}
