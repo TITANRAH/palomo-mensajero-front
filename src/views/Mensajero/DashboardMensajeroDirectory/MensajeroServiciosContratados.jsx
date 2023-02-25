@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import usePalomo from "../../../hooks/usePalomo";
 import axios from "axios";
 function MensajeroServiciosContratados({ servicio }) {
