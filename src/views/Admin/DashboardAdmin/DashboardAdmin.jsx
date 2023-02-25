@@ -1,5 +1,5 @@
-import usePalomo from "../../../hooks/usePalomo"
-import "../../../index.css"
+import usePalomo from "../../../hooks/usePalomo";
+import "../../../index.css";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -13,20 +13,10 @@ export default function DashboardAdmin() {
     getServices();
   }, []);
 
-
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4">
       <div className="col" onClick={() => navigate("/admin_roles")}>
-          <div className="card h-100">
-            <img src="..." className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">Ingresa aquí para administar roles</h5>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
+       
       </div>
       <div className="col" onClick={() => navigate("/crear_roles_admin")}>
         <div className="card h-100">
@@ -43,7 +33,9 @@ export default function DashboardAdmin() {
         <div className="card h-100">
           <img src="..." className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">Ingresa aquí para administar servicios</h5>
+            <h5 className="card-title">
+              Ingresa aquí para administar servicios
+            </h5>
           </div>
           <div className="card-footer">
             <small className="text-muted">Last updated 3 mins ago</small>
@@ -64,4 +56,3 @@ export default function DashboardAdmin() {
     </div>
   );
 }
-
