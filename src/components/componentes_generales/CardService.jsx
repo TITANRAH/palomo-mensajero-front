@@ -16,12 +16,15 @@ function CardService({ servicio }) {
 
   return (
     <div className="carta">
-      <div className="card">
+      <div className="card caja-img">
+        <div className="imagen-home">
         <img
           className="card-img-top"
-          src={require("../../assets/img/DESAYUNO_1.jpeg")}
+          src={require(`../../assets/img/${servicio.img_src}`)}
           alt="serv"
         />
+        </div>
+       
         <div className="card-body">
           <h5 className="card-title">{servicio.titulo} </h5>
           <hr />
