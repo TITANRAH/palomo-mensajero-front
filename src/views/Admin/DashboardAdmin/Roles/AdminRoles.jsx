@@ -26,8 +26,8 @@ export default function AdminRoles() {
               <th scope="col">#</th>
               <th scope="col">Rol</th>
               <th scope="col">Email</th>
-              <th scope="col"><i class="bi bi-pencil-square editar"></i></th>
-              <th scope="col"><i class="bi bi-trash eliminar"></i></th>
+              <th scope="col"><i className="bi bi-pencil-square editar"></i></th>
+              <th scope="col"><i className="bi bi-trash eliminar"></i></th>
             </tr>
           </thead>
 
