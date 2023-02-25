@@ -7,6 +7,10 @@ import Navbar from "./components/componentes_generales/Navbar";
 import Footer from "./components/componentes_generales/Footer/Footer";
 import Carrito from "./views/Cliente/Carrito";
 import DashboardAdmin from "./views/Admin/DashboardAdmin/DashboardAdmin";
+import AdminRoles from "./views/Admin/DashboardAdmin/Roles/AdminRoles"
+import CrearRoles from "./views/Admin/DashboardAdmin/Roles/CrearRolesAdmin"
+import AdminServicios from "./views/Admin/DashboardAdmin/Servicios/AdminServicios"
+import CrearServicioAdmin from "./views/Admin/DashboardAdmin/Servicios/CrearServicioAdmin"
 import DetalleServicio from "./views/Cliente/DetalleServicio";
 import usePalomo from "./hooks/usePalomo";
 import { useEffect } from "react";
@@ -99,6 +103,41 @@ function App() {
           }
         />
 
+        <Route
+          path="/admin_roles"
+          element={
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
+              <AdminRoles />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/crear_roles_admin"
+          element={
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
+              <CrearRoles />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/admin_servicios"
+          element={
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
+              <AdminServicios />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/crear_servicios_Admin"
+          element={
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
+              <CrearServicioAdmin />
+            </Protected>
+          }
+        />
         <Route
           path="/dashboardMensajero"
           element={
