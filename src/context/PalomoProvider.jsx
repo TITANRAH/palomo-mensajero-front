@@ -51,7 +51,7 @@ function PalomoProvider({ children }) {
     try {
       const options = {
         method: "GET",
-        url: `https://proyecto-final-back-production-045b.up.railway.app/todos_servicios_contratados`,
+        url: `https://proyecto-final-back-production-045b.up.railway.app/servicios_contratados_usuarios`,
 
         headers: { Authorization: "Bearer " + token },
 
