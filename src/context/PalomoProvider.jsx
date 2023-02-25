@@ -256,7 +256,8 @@ function PalomoProvider({ children }) {
         getServicios,
         servicios,
         editarServicio,
-        eliminarServicio
+        eliminarServicio,
+        setRoles
       }}
     >
       {children}
