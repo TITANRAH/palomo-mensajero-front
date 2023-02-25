@@ -203,7 +203,8 @@ function PalomoProvider({ children }) {
         restarPagado,
         getContractServices,
         getRoles,
-        roles
+        roles,
+        setRoles
       }}
     >
       {children}
