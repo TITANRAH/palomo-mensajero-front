@@ -14,6 +14,7 @@ function PalomoProvider({ children }) {
   const [serviciosCarrito, setServiciosCarrito] = useState([]);
   const [servicioContratado, setServicioContratado] = useState([]);
   const [misPedidos, setMisPedidos] = useState([]);
+  const [roles, setRoles] = useState([]);
 
   const totalComprasServicios = serviciosCarrito.reduce(
     (a, s) => a + s.precio * s.count,
@@ -63,6 +64,32 @@ function PalomoProvider({ children }) {
     } catch (error) {}
   };
 
+  /*GET ROLES*/
+
+  async function getRoles() {
+    const urlServer =
+      "https://proyecto-final-back-production-045b.up.railway.app";
+    const endpoint = "/roles";
+    const token = localStorage.getItem("token");
+    const resp = await axios.get(urlServer + endpoint, {
+      headers: { Authorization: "Bearer " + token },
+    });
+
+    if (resp.status === 200) {
+      setRoles(resp.data);
+    } else {
+      MySwal.fire({
+        title: <strong>Error !</strong>,
+        html: <i>No se pudieron obtener los roles.</i>,
+        icon: "warning",
+      }).then(() => {
+        navigate("/dashboardAdmin");
+      });
+    }
+  }
+
+
+
 
 
   async function getPedidos(id_usuario) {
@@ -80,7 +107,7 @@ function PalomoProvider({ children }) {
       MySwal.fire({
         title: <strong>Error !</strong>,
         html: <i>No se pudieron obtener los pedidos del usuario.</i>,
-        icon: "success",
+        icon: "warning",
       }).then(() => {
         navigate("/misPedidos");
       });
@@ -174,7 +201,9 @@ function PalomoProvider({ children }) {
         setMisPedidos,
         getPedidos,
         restarPagado,
-        getContractServices
+        getContractServices,
+        getRoles,
+        roles
       }}
     >
       {children}
