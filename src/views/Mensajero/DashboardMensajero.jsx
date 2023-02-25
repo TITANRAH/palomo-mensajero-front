@@ -2,10 +2,10 @@ import MensajeroServiciosContratados from "./DashboardMensajeroDirectory/Mensaje
 import usePalomo from "../../hooks/usePalomo"
 import { useEffect } from "react";
 export default function DashboardMensajero() {
-  const { getServices, arrServicios } = usePalomo();
+  const { getContractServices, servicioContratado } = usePalomo();
 
   useEffect(() => {
-    getServices();
+    getContractServices();
   }, []);
 
     return (
@@ -17,16 +17,16 @@ export default function DashboardMensajero() {
        <table className="table mb-4 text-center table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">Cliente</th>
                         <th scope="col">Servicio</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Estado</th>
                        </tr>
                     </thead>
                     <tbody>
                       
                  
-       {arrServicios.map((servicio) => (
+       {servicioContratado.map((servicio) => (
           <tr key={servicio.id_servicio}>
             <MensajeroServiciosContratados servicio={servicio} />
           </tr>

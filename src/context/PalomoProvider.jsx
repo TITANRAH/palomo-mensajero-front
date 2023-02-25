@@ -12,7 +12,7 @@ function PalomoProvider({ children }) {
   const [usuarioGlobal, setUsuarioGlobal] = useState({});
   const [servicioSel, setServicioSel] = useState({});
   const [serviciosCarrito, setServiciosCarrito] = useState([]);
-  const [servicioContratado, setServicioContratado] = useState({});
+  const [servicioContratado, setServicioContratado] = useState([]);
   const [misPedidos, setMisPedidos] = useState([]);
 
   const totalComprasServicios = serviciosCarrito.reduce(
@@ -42,6 +42,28 @@ function PalomoProvider({ children }) {
       });
     } catch (error) {}
   };
+
+  const getContractServices = async () => {
+    const token = localStorage.getItem("token");
+    console.log("Entre al servicios contratados")
+    try {
+      const options = {
+        method: "GET",
+        url: `https://proyecto-final-back-production-045b.up.railway.app/todos_servicios_contratados`,
+        
+          headers: { Authorization: "Bearer " + token },
+        
+      };
+
+        await axios.request(options).then((response) => {
+        setServicioContratado(response.data);
+
+        console.log("respuesta de api", response);
+      });
+    } catch (error) {}
+  };
+
+
 
   async function getPedidos(id_usuario) {
     const urlServer =
@@ -151,7 +173,8 @@ function PalomoProvider({ children }) {
         misPedidos,
         setMisPedidos,
         getPedidos,
-        restarPagado
+        restarPagado,
+        getContractServices
       }}
     >
       {children}
