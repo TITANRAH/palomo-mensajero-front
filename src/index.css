@@ -23,6 +23,8 @@ body {
 
 .contenedor-detalle-servicio{
   min-height: 73vh;
+  display: flex;
+  justify-content: center;
 }
 
 .caja-login{

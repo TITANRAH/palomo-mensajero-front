@@ -49,7 +49,6 @@ export default function DetalleServicio() {
 
     servicio();
 
-    // foto = `../../assets/img/${servicioSel.img_src}` ;
   }, []);
 
   return (
