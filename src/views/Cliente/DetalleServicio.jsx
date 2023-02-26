@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import usePalomo from "../../hooks/usePalomo";
 import { useNavigate } from "react-router-dom";
 import anadir from "../../assets/iconos/anadir.png";
+import DESAYUNO_1 from "../../assets/img/DESAYUNO_1.jpeg";
 
 export default function DetalleServicio() {
   const { id } = useParams();
+  // var foto = ''
+  const [foto, setFoto] = useState('')
 
   console.log("id_servicio", id);
   const { arrServicios, MySwal, servicioSel, setServicioSel, add } =
@@ -25,11 +28,15 @@ export default function DetalleServicio() {
   }
 
   useEffect(() => {
-    function servicio() {
-      const servicioSeleccionado = arrServicios.find((servicio) => {
+
+  
+
+   async function  servicio() {
+      const servicioSeleccionado = await arrServicios.find((servicio) => {
         return servicio.id_servicio == id;
       });
 
+      
       if (
         servicioSeleccionado === undefined ||
         servicioSeleccionado === "" ||
@@ -37,11 +44,15 @@ export default function DetalleServicio() {
       ) {
         swal();
       } else {
-        setServicioSel(servicioSeleccionado);
+       setServicioSel(servicioSeleccionado);
+       setFoto(servicioSeleccionado.img_src);
+        
       }
     }
 
     servicio();
+
+    // foto = `../../assets/img/${servicioSel.img_src}` ;
   }, []);
 
   return (
@@ -53,7 +64,7 @@ export default function DetalleServicio() {
               <div className="col-5">
                 <img
                   className="foto-servicio"
-                  src={require(`../../assets/img/${servicioSel.img_src}`)}
+                  src={foto == '' ? DESAYUNO_1 : require(`../../assets/img/${foto}`)}
                   alt=""
                 />
               </div>

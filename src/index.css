@@ -374,8 +374,13 @@ body {
 
 }
 
+.caja-img{
+min-height: 25rem;
+}
+
+
 .cont-descripcion{
-  height: 20vh;
+  min-height: 14vh;
   text-align: justify;
 
 }
