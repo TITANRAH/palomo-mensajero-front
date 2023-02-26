@@ -27,7 +27,7 @@ export default function DetalleServicio() {
   useEffect(() => {
     function servicio() {
       const servicioSeleccionado = arrServicios.find((servicio) => {
-        return servicio.id_servicio == id;
+        return servicio.id_servicio === id;
       });
 
       if (

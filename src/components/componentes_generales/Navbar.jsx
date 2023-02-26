@@ -23,8 +23,8 @@ function Navbar() {
 <>
     <nav className="navbar">
     <NavLink to="/">
-    <span className="logo"><img className="imagen-nav" src={palomoLogo} alt="" /><span>El Palomo Mensajero</span></span>
-</NavLink>
+    <span className="logo"><img className="imagen-nav" src={palomoLogo} alt="" /><span className="palomo">El Palomo Mensajero</span></span>
+    </NavLink>
     <div className="opciones">
       {usuarioGlobal.length===0? (
         <div>
@@ -37,7 +37,8 @@ function Navbar() {
           </NavLink>
         </div>
       ) : (
-        <div>
+        <div className="logo">
+        <span className="palomo">Bienvenido, {usuarioGlobal.email} </span>
           <NavLink to="/perfil">
             <button className="btn  m-1 btn-light">Mi Perfil</button>
           </NavLink>
