@@ -131,7 +131,7 @@ function App() {
         />
 
         <Route
-          path="/crear_servicios_Admin"
+          path="/crear_servicios_admin"
           element={
             // <Protected requirements={usuarioGlobal.id_rol === 3}>
               <CrearServicioAdmin />
