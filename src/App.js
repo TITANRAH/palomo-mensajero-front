@@ -24,12 +24,10 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // console.log('usuarioGlobal',usuarioGlobal.id_rol)
 
     const usuario = JSON.parse(localStorage.getItem("usuario")) || null;
     if (usuario != null) setUsuarioGlobal(usuario);
 
-    // console.log("desde app.js", usuario);
   }, []);
 
   //

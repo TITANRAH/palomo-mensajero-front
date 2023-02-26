@@ -9,7 +9,6 @@ import usePalomo from "../../hooks/usePalomo";
 function Navbar() {
 
   const { usuarioGlobal,setUsuarioGlobal} = usePalomo();
-  console.log("Usuario GLobal", usuarioGlobal)
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);

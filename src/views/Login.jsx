@@ -59,14 +59,10 @@ export default function LoginForm() {
       "https://proyecto-final-back-production-045b.up.railway.app";
     const endpoint = "/usuario";
     const token = localStorage.getItem("token");
-    console.log("token desde front", token);
-
     try {
       const { data } = await axios.get(urlServer + endpoint, {
         headers: { Authorization: "Bearer " + token },
       });
-
-      console.log("Usuario dede front ", data[0]);
 
       await setUsuarioLocal(data[0]);
       await setUsuarioGlobal(data[0]);
@@ -75,19 +71,13 @@ export default function LoginForm() {
 
       localStorage.setItem("usuario",JSON.stringify(data[0]));
 
-      console.log("Usuario id_rol ", data[0].id_rol);
-
       if (data[0].id_rol === 3) {
         navigate("/dashboardAdmin");
-        console.log("es admin");
       } else if (data[0].id_rol === 2) {
         navigate("/dashboardMensajero");
-        console.log("es mensajero");
       } else {
         navigate("/");
-        console.log("es cliente");
       }
-      console.log("data:", usuario);
     } catch (e) {
       MySwal.fire({
         title: <strong>Error !</strong>,

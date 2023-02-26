@@ -14,9 +14,6 @@ export default function ServicioContratado() {
   const navigate = useNavigate();
   const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-  console.log("id_servicio", fechaFormateada);
-  console.log("servicioContratado desde servicios contratados", fecha);
-
   function swal() {
     MySwal.fire({
       title: <strong>Felicitaciones, Tu servicio ya esta en camino !</strong>,
@@ -72,8 +69,6 @@ export default function ServicioContratado() {
     } catch (error) {
       swalError();
     }
-
-    console.log("pedido", pedidoContratado);
     setDireccionEnvio("");
   };
 

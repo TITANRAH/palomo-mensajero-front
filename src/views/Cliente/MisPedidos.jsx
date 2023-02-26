@@ -13,7 +13,6 @@ export default function MisPedidos() {
     getPedidos(id);
   }, []);
 
-  console.log("misPedidos desde Mis pedidos", misPedidos);
 
   return (
     <>

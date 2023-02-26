@@ -18,7 +18,6 @@ function MensajeroServiciosContratados({ servicio }) {
   }
 
   const cambiarEstado = async (idServContratado, idEstado) => {
-    console.log("Entre a cambio de estado", idServContratado, idEstado);
 
     const urlServer = `https://proyecto-final-back-production-045b.up.railway.app/servicio_contratado`;
     const token = localStorage.getItem("token");
