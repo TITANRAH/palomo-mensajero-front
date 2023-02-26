@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import usePalomo from "../../../../hooks/usePalomo";
 
 export default function AdminRoles() {
-  const { roles, getRoles, MySwal, setRoles } = usePalomo();
+  const { roles, getRoles, MySwal } = usePalomo();
   const [editRol, setEditRol] = useState();
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -23,8 +23,6 @@ export default function AdminRoles() {
 
     try {
       const urlBase = `https://proyecto-final-back-production-045b.up.railway.app/roles`;
-
-      const token = localStorage.getItem("token");
       const res = await axios.delete(urlBase, {
         data: { id: id },
       });

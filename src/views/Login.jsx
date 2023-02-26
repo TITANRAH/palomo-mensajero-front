@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usePalomo from "../hooks/usePalomo.jsx";
- 
+
 import axios from "axios";
 
 export default function LoginForm() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -67,9 +66,7 @@ export default function LoginForm() {
       await setUsuarioLocal(data[0]);
       await setUsuarioGlobal(data[0]);
 
-      
-
-      localStorage.setItem("usuario",JSON.stringify(data[0]));
+      localStorage.setItem("usuario", JSON.stringify(data[0]));
 
       if (data[0].id_rol === 3) {
         navigate("/dashboardAdmin");
@@ -81,7 +78,9 @@ export default function LoginForm() {
     } catch (e) {
       MySwal.fire({
         title: <strong>Error !</strong>,
-        html: <h2>No ha sido posible obtener el usuario, vuelve a intentarlo</h2>,
+        html: (
+          <h2>No ha sido posible obtener el usuario, vuelve a intentarlo</h2>
+        ),
         icon: "error",
       }).then(() => {
         console.log("error");
