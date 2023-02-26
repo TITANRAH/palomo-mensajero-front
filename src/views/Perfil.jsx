@@ -4,7 +4,7 @@ import usePalomo from "../hooks/usePalomo.jsx";
 import CardService from "../components/componentes_generales/CardService";
 
 export default function Perfil() {
-  const { getServices, arrServicios, usuarioGlobal } = usePalomo();
+  const { getServices, arrServicios } = usePalomo();
   
   useEffect(() => {
 
