@@ -5,29 +5,24 @@ function MensajeroServiciosContratados({ servicio }) {
   const { getContractServices } = usePalomo();
   const [active, setActive] = useState(false);
 
-  let textEstado = "";
-   let claseEncurso = "";
-  
+  let claseEncurso = "";
+
   if (servicio.id_estado === 1) {
-   // textEstado = "CONTRATADO";
-    claseEncurso = "btn btn-warning"
-    
+    // textEstado = "CONTRATADO";
+    claseEncurso = "btn btn-warning";
   } else {
-   // textEstado = "EN CURSO";
-    claseEncurso = "btn btn-success"
+    // textEstado = "EN CURSO";
+    claseEncurso = "btn btn-success";
   }
 
   const cambiarEstado = async (idServContratado, idEstado) => {
-
     const urlServer = `https://proyecto-final-back-production-045b.up.railway.app/servicio_contratado`;
     const token = localStorage.getItem("token");
 
-    if (idEstado === 1) 
-      idEstado = 2;
-    else 
-      idEstado = 1;
+    if (idEstado === 1) idEstado = 2;
+    else idEstado = 1;
 
-      const estadoPedido = {
+    const estadoPedido = {
       id_estado: idEstado,
       id_serv_contratados: idServContratado,
     };
@@ -45,7 +40,9 @@ function MensajeroServiciosContratados({ servicio }) {
 
   return (
     <>
-      <th scope="row">{servicio.nombre} {servicio.apellido}</th>
+      <th scope="row">
+        {servicio.nombre} {servicio.apellido}
+      </th>
       <td>{servicio.titulo}</td>
       <td>{servicio.direccion_envio}</td>
       <td>

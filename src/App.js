@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Registro from "./views/Registro";
@@ -7,6 +7,10 @@ import Navbar from "./components/componentes_generales/Navbar";
 import Footer from "./components/componentes_generales/Footer/Footer";
 import Carrito from "./views/Cliente/Carrito";
 import DashboardAdmin from "./views/Admin/DashboardAdmin/DashboardAdmin";
+import AdminRoles from "./views/Admin/DashboardAdmin/Roles/AdminRoles";
+import CrearRoles from "./views/Admin/DashboardAdmin/Roles/CrearRolesAdmin";
+import AdminServicios from "./views/Admin/DashboardAdmin/Servicios/AdminServicios";
+import CrearServicioAdmin from "./views/Admin/DashboardAdmin/Servicios/CrearServicioAdmin";
 import AdminRoles from "./views/Admin/DashboardAdmin/Roles/AdminRoles";
 import CrearRoles from "./views/Admin/DashboardAdmin/Roles/CrearRolesAdmin";
 import AdminServicios from "./views/Admin/DashboardAdmin/Servicios/AdminServicios";
@@ -80,7 +84,7 @@ function App() {
           path="/login"
           element={
             <Protected
-              requirements={Object.keys(usuarioGlobal).length == 0}
+              requirements={Object.keys(usuarioGlobal).length === 0}
               redirectTo="/"
             >
               <Login />
