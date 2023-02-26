@@ -13,6 +13,14 @@ body {
   min-height: 64vh;
 }
 
+.carrito-serv{
+  min-height: 69vh;
+}
+
+.irhome{
+  color: rgb(74, 109, 175) !important
+}
+
 .contenedor-detalle-servicio{
   min-height: 73vh;
 }

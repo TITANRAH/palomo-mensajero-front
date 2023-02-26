@@ -53,13 +53,13 @@ export default function Carrito() {
 
   return (
     <>
-      <div className="detalle-contenedor mt-5 p-4">
+      <div className="detalle-contenedor carrito-serv mt-5 p-4">
         <div className="detalle">
           <ul>
             {serviciosCarrito.length === 0 ? (
               <div className="carrito-vacío pt-3">
                 <h4>El carrito esta vacío</h4>
-                <a onClick={() => irAhome()} href="/">
+                <a className="irhome" onClick={() => irAhome()} href="/">
                   IR A HOME
                 </a>
               </div>
