@@ -170,7 +170,7 @@ export default function AdminRoles() {
                 <th scope="row">{index + 1}</th>
                 <td>
                   <select
-                    className="form-control"
+                    className="form-input"
                     name="id_rol"
                     onChange={handleEditRol}
                   >
@@ -183,7 +183,7 @@ export default function AdminRoles() {
                 <td>
                   <input
                     id="email_rol"
-                    className="form-control"
+                    className="form-input"
                     placeholder={r.email_rol}
                     type="text"
                     name="email_rol"

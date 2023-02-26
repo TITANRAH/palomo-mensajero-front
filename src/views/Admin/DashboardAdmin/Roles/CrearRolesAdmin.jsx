@@ -9,7 +9,7 @@ export default function CrearRoles() {
   const { MySwal } = usePalomo();
 
   const handleSetRol = ({ target: { value, name } }) => {
-   
+
     const field = {};
     field[name] = value;
     setRol({ ...rol, ...field });
@@ -68,10 +68,9 @@ export default function CrearRoles() {
 
   return (
     <div className="servicio-contratado mt-5">
-      <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
+      <div className="col-10 col-sm-6 col-md-5 m-auto mt-5">
         <h1>Crear Rol</h1>
         <hr />
-
         <div className="form-group mt-1 ">
           <label>Email</label>
           <input
@@ -79,15 +78,14 @@ export default function CrearRoles() {
             onChange={handleSetRol}
             type="email"
             name="email_rol"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa el email"
           />
-
           <div className="form-group  mt-3">
             <label>Asigna un rol</label>
             <select
               value={rol.id_rol || ""}
-              className="form-control"
+              className="form-input"
               name="id_rol"
               onChange={handleSetRol}
             >
@@ -98,11 +96,9 @@ export default function CrearRoles() {
             </select>
           </div>
         </div>
-
         <button onClick={createRol} className="btn btn-success mt-3">
           ASIGNAR ROL
         </button>
-        
       </div>
     </div>
   );
