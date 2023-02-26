@@ -14,7 +14,8 @@ export default function CrearServicioAdmin() {
     setServicio({ ...servicio, ...field });
   };
 
-  async function createServiceAdmin() {;
+  async function createServiceAdmin() {
+    ;
 
     if (
       !servicio.titulo ||
@@ -68,23 +69,21 @@ export default function CrearServicioAdmin() {
         icon: "error",
       });
     }
-
     setServicio("");
   }
 
   return (
     <div className=" tabla-crear mt-5 mb-5">
-      <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
+      <div className="col-10 col-sm-6 col-md-5 m-auto mt-5 prueba ">
         <h1>Crear Servicio</h1>
         <hr />
-
         <div className="form-group mt-1 ">
           <label className="mt-3">Título</label>
           <input
             onChange={handleSetServicio}
             type="titulo"
             name="titulo"
-            className="form-control"
+            className=" form-input"
             placeholder="Ingresa el título"
             value={servicio.titulo || ""}
           />
@@ -93,7 +92,7 @@ export default function CrearServicioAdmin() {
             onChange={handleSetServicio}
             type="img_src"
             name="img_src"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa el nombre de la imagen"
             value={servicio.img_src || ""}
           />
@@ -102,14 +101,14 @@ export default function CrearServicioAdmin() {
             onChange={handleSetServicio}
             type="precio"
             name="precio"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa un valor sin puntos"
             value={servicio.precio || ""}
           />
           <label className="mt-3">Descripción</label>
           <textarea
             onChange={handleSetServicio}
-            className="form-control"
+            className="form-input"
             id="descripcion"
             placeholder="Ingresa la descripcíon aquí..."
             name="descripcion"
@@ -117,12 +116,11 @@ export default function CrearServicioAdmin() {
             cols="50"
             value={servicio.descripcion || ""}
           ></textarea>
-
           <div className="form-group  mt-3">
             <label>Asigna una categoría</label>
             <select
               value={servicio.categoria || ""}
-              className="form-control"
+              className="form-input"
               name="categoria"
               onChange={handleSetServicio}
             >
