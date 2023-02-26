@@ -29,14 +29,14 @@ export default function DetalleServicio() {
 
   useEffect(() => {
 
-  
 
-   async function  servicio() {
+
+    async function servicio() {
       const servicioSeleccionado = await arrServicios.find((servicio) => {
         return servicio.id_servicio == id;
       });
 
-      
+
       if (
         servicioSeleccionado === undefined ||
         servicioSeleccionado === "" ||
@@ -44,9 +44,9 @@ export default function DetalleServicio() {
       ) {
         swal();
       } else {
-       setServicioSel(servicioSeleccionado);
-       setFoto(servicioSeleccionado.img_src);
-        
+        setServicioSel(servicioSeleccionado);
+        setFoto(servicioSeleccionado.img_src);
+
       }
     }
 
@@ -61,31 +61,33 @@ export default function DetalleServicio() {
         <div className="contenedor">
           <div className="servicio-unique-contenedor mt-3 m-3">
             <div className="row servicio-palomo">
-              <div className="col-5">
+              <div className="form-img-detalle">
                 <img
                   className="foto-servicio"
                   src={foto == '' ? DESAYUNO_1 : require(`../../assets/img/${foto}`)}
                   alt=""
                 />
               </div>
-              <div className="col-7 descripcion">
+              <div className="descripcion">
                 <h5 className="mt-4" autoCapitalize="capitalize">
                   {servicioSel.titulo}
                 </h5>
                 <hr />
                 <p>{servicioSel.descripcion}</p>
 
-                <h4>
-                  <b>Precio : $ {servicioSel.precio}</b>
-                </h4>
+                <div className="cont-precio-btn">
+                  <h4>
+                    <b>Precio : $ {servicioSel.precio}</b>
+                  </h4>
 
-                <div className="precio-servicio-unico mt-3 mb-4">
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => add(servicioSel)}
-                  >
-                    Añadir <img className="imagen-boton" src={anadir} alt="" />
-                  </button>
+                  <div className="botones mt-2">
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => add(servicioSel)}
+                    >
+                      Añadir <img className="imagen-boton" src={anadir} alt="" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

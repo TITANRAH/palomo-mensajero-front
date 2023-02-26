@@ -20,6 +20,7 @@ body {
 .servicio-unique-contenedor {
   padding: 1rem;
   border: 1px solid rgb(196, 196, 196);
+  width: 80%;
 }
 
 .contenedor {
@@ -104,6 +105,47 @@ body {
   text-decoration: none !important;
   font-weight: 600;
   margin: 0;
+}
+
+.servicio-palomo {
+  display: flex;
+  flex-direction: row;
+  align-content: center;  
+  width: 100%;
+}
+
+.form-img-detalle{
+  width: 35%;
+  height: 20%;
+  margin-left: 5vh;
+  margin-right: 10vh;
+
+}
+
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+
+.cont-precio-btn{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 25%;
+  width: 80%;
+
+}
+
+.foto-servicio {
+  width: 100%;
+  height: 100%;
 }
 
 /* Navbar */
@@ -230,36 +272,32 @@ body {
     height: 6vh;
   }
 
-  .carta {
+  .servicio-palomo {
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 1rem;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: auto;
   }
-  
-  .card {
-    width: 17rem;
+
+  .form-img-detalle{
+    width: auto;
+    height: auto;
+
   }
-  
-  .cont-img-card{
-  
-    width: 100%;
-    height: 35vh;
-    
-  
+
+  .descripcion {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
   }
-  
-  .card-img-top{
-    width: 100%;
-    height: 100%;
-  
+
+  .servicio-unique-contenedor {
+    width: 50%;
   }
-  
-  .cont-descripcion{
-    height: 20vh;
-    text-align: justify;
-  
-  }
+
 }
 
 @media (max-width: 991px) {
@@ -304,6 +342,30 @@ body {
 
   .cont-titulo-car {
     font-size: medium;
+  }
+
+  .servicio-palomo {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .form-img-detalle{
+    width: auto;
+    height: auto;
+  }
+
+  .descripcion {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+  .servicio-unique-contenedor {
+    width: 70%;
   }
 }
 
@@ -388,18 +450,6 @@ min-height: 25rem;
   /* border: 1px solid rgb(196, 196, 196); */
   width: 70rem;
   margin: auto;
-}
-
-.servicio-palomo {
-  display: flex;
-  align-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.foto-servicio {
-  width: 100%;
-  height: 100%;
 }
 
 .descripcion {
