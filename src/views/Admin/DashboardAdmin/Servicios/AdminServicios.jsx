@@ -14,27 +14,27 @@ export default function AdminServicios() {
     <>
       <div className="tabla-datos-admin-servicios">
         <table className="table">
-          <thead className="thead-dark">
+          <thead className="thead-dark prueba">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Servicio</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Descripción</th>
+              <th scope="col" className="form-desc-serv">Descripción</th>
               <th scope="col"><i className="bi bi-trash eliminar"></i></th>
             </tr>
           </thead>
           {servicios.map((s, index) => (
             <tbody key={index}>
-              <tr>
+              <tr >
                 <th scope="row">{index + 1}</th>
                 <td>
                   <label className="form-control">{s.id_servicio}</label>
                 </td>
                 <td>
-                  <label className="form-control">{s.titulo}</label>
+                  <label className="form-control form-tit-serv">{s.titulo}</label>
                 </td>
                 <td>
-                  <label className="form-control">{s.descripcion}</label>
+                  <label className="form-control form-desc-serv">{s.descripcion}</label>
                 </td>
                 <td>
                   <button
