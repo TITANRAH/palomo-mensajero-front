@@ -9,7 +9,7 @@ const PalomoContext = createContext({});
 function PalomoProvider({ children }) {
   const navigate = useNavigate();
   const [arrServicios, setArrServicios] = useState([]);
-  const [usuarioGlobal, setUsuarioGlobal] = useState({});
+  const [usuarioGlobal, setUsuarioGlobal] = useState([]);
   const [servicioSel, setServicioSel] = useState({});
   const [serviciosCarrito, setServiciosCarrito] = useState([]);
   const [servicioContratado, setServicioContratado] = useState([]);

@@ -108,13 +108,13 @@ body {
 
 /* Navbar */
 
-.nav {
-  display: flex;
+.navbar {
+ /*  display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
   background-color: rgb(74, 109, 175);
-  padding: 1rem;
-  height: 13vh;
+ /*  padding: 1rem;
+  height: 13vh; */
 }
 
 .titulo {
@@ -454,4 +454,9 @@ body {
 
 .eliminar {
   font-size: 1.3rem;
+}
+
+.opciones{
+  display: flex;
+  align-items: center;
 }
