@@ -13,6 +13,14 @@ body {
   min-height: 64vh;
 }
 
+.caja-login{
+  min-height: 69vh;
+}
+
+.caja-registro{
+  min-height: 69vh;
+}
+
 .servicio-contratado {
   min-height: 69vh;
 }
