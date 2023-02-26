@@ -60,7 +60,7 @@ console.log("Servicio Seleccionado",servicioSeleccionado)
   return (
     <>
       {servicioSel !== {} ? (
-        <div className="contenedor">
+        <div className="contenedor-detalle-servicio">
           <div className="servicio-unique-contenedor mt-3 m-3">
             <div className="row servicio-palomo">
               <div className="col-5">
