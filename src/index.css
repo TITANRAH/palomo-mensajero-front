@@ -717,29 +717,156 @@ body {
   font-size: 1.3rem;
 }
 
-.opciones {
-  display: flex;
-  align-items: center;
-  margin-right: 0.5rem;
-  color: white;
+.cart{
+font-size: 1.5rem;
+color:white;
+} 
+
+a:link {text-decoration: none; font-size: 20px; }
+a:hover { color: white; text-decoration: none }
+a:visited {color: white;  text-decoration: none }
+
+@media (max-width: 767px) {
+  span .palomo{
+    display:none;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    height: 13vh;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .titulo {
+    width: 45vh;
+    display: flex;
+    margin-left: 0;
+  }
+
+  .imagen-nav {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .titulo h3 {
+    font-size: large;
+  }
+
+  .form-cont-login {
+    width: 21vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
+
+  .form-tit-navbar {
+    font-size: medium;
+  }
+
+  .carrito {
+    width: 30vh;
+  }
+
+  .cont-titulo-car {
+    font-size: medium;
+    display: flex;
+  }
+
+  .form-img-car {
+    width: 6vh;
+    height: 6vh;
+  }
+
+  .servicio-palomo {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .form-img-detalle{
+    width: auto;
+    height: auto;
+
+  }
+
+  .descripcion {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .servicio-unique-contenedor {
+    width: 50%;
+  }
+
 }
 
-.opciones .form-img-icons {
-  width: 2.5rem;
-  gap: 0;
-}
+@media (max-width: 991px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    height: 13vh;
+    justify-content: space-evenly;
+    gap: 0;
+  }
 
-a:link {
-  text-decoration: none;
-  font-size: 20px;
-}
+  .titulo {
+    width: 55vh;
+    margin-left: 0;
+  }
 
-a:hover {
-  color: white;
-  text-decoration: none
-}
+  .imagen-nav {
+    width: 9vh;
+    height: 9vh;
+  }
 
-a:visited {
-  color: white;
-  text-decoration: none
+  .titulo h3 {
+    font-size: x-large;
+  }
+
+  .form-cont-login {
+    width: 30vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 6vh;
+  }
+
+  .form-tit-navbar {
+    font-size: x-large;
+  }
+
+   .cont-titulo-car {
+    font-size: medium;
+  }
+
+  .servicio-palomo {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .form-img-detalle{
+    width: auto;
+    height: auto;
+  }
+
+  .descripcion {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+  .servicio-unique-contenedor {
+    width: 70%;
+  }
 }

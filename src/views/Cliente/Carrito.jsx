@@ -47,6 +47,16 @@ export default function Carrito() {
     <>
       <div className="detalle-contenedor carrito-serv mt-5 p-4">
         <div className="detalle">
+        <table className="table table-hover">
+            <thead className="thead-dark">
+              <tr>
+               <th scope="col">Pedido</th>
+                <th scope="col">Servicio</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acción</th>
+              </tr>
+            </thead></table>
           <ul>
             {serviciosCarrito.length === 0 ? (
               <div className="carrito-vacío pt-3">
@@ -65,10 +75,10 @@ export default function Carrito() {
                         src={require(`../../assets/img/${s.img_src}`)}
                         alt="fotos"
                       />
-                      <h3 className="ml-3">Servicio: {s.titulo}</h3>
-                      <h3 className="categoria">
-                        Categoria: {obtenerCategoria(s.id_categoria)}
-                      </h3>
+                      <h5 className="ml-3">{s.titulo}</h5>
+                      <h5 className="categoria">
+                        {obtenerCategoria(s.id_categoria)}
+                      </h5>
                     </div>
 
                     <div className="detalle-botones">
@@ -79,11 +89,11 @@ export default function Carrito() {
                         +
                       </button> */}
 
-                      <h3>
+                      <h5>
                         {" "}
                         Llevas {s.count} servicio de {s.titulo} que cuesta ${" "}
                         {s.precio}
-                      </h3>
+                      </h5>
 
                       <button
                         onClick={() => restar(s.id_servicio)}
