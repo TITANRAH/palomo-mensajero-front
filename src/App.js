@@ -97,98 +97,57 @@ function App() {
         <Route
           path="/dashboardAdmin"
           element={
-            // <Protected requirements={usuarioGlobal.id_rol === 3}>
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
               <DashboardAdmin />
-            // </Protected>
+            </Protected>
           }
         />
 
         <Route
           path="/admin_roles"
           element={
-            // <Protected requirements={usuarioGlobal.id_rol === 3}>
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
               <AdminRoles />
-            // </Protected>
+            </Protected>
           }
         />
 
         <Route
           path="/crear_roles_admin"
           element={
-            // <Protected requirements={usuarioGlobal.id_rol === 3}>
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
               <CrearRoles />
-            // </Protected>
+            </Protected>
           }
         />
 
         <Route
           path="/admin_servicios"
           element={
-            // <Protected requirements={usuarioGlobal.id_rol === 3}>
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
               <AdminServicios />
-            // </Protected>
+            </Protected>
           }
         />
 
         <Route
           path="/crear_servicios_admin"
           element={
-            // <Protected requirements={usuarioGlobal.id_rol === 3}>
+            <Protected requirements={usuarioGlobal.id_rol === 3}>
               <CrearServicioAdmin />
-            // </Protected>
+            </Protected>
           }
         />
         <Route
           path="/dashboardMensajero"
           element={
-            // <Protected requirements={usuarioGlobal.id_rol === 2}>
+            <Protected requirements={usuarioGlobal.id_rol === 2}>
               <DashboardMensajero />
-            // </Protected>
+            </Protected>
           }
         />
 
-        {/* <Route
-            path="/dashboardMensajeroRoute"
-            element={
-              usuarioGlobal !== undefined && 'id_rol' in usuarioGlobal && usuarioGlobal.id_rol === 2 ? (
-                <Navigate to='/dashboardMensajero' />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route
-            path="/dashboardAdminRoute"
-            element={
-              usuarioGlobal !== undefined && 'id_rol' in usuarioGlobal && usuarioGlobal.id_rol === 3 ? (
-                <Navigate to='/dashboardAdmin' />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          /> */}
-        {/* <Route
-            path="/dashboardAdmin"
-            element={
-              usuarioGlobal !== undefined && 'id_rol' in usuarioGlobal && usuarioGlobal.id_rol === 3 ? (
-                <Navigate to={<DashboardAdmin />} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          /> */}
-        {/* {console.log('usuarioGLOBAL ENTRE ROUTES', usuarioGlobal)} */}
-        {/* <Route
-            path="/detalleServicio"
-            element={
-
-              usuarioGlobal !== undefined && 'id_rol' in usuarioGlobal && usuarioGlobal.id_rol === 1 ? (
-                <Navigate to={<DetalleServicio />} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          /> */}
+    
       </Routes>
       <Footer />
 

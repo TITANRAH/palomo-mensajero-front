@@ -314,6 +314,14 @@ body {
   width: 17rem;
 }
 
+.caja-login{
+  min-height: 64vh;
+}
+
+.caja-registro{
+  min-height: 64vh;
+}
+
 .cont-img-card{
   width: 100%;
   height: 19vh;
