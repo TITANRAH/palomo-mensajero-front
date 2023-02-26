@@ -32,11 +32,13 @@ export default function DetalleServicio() {
   
 
    async function  servicio() {
+    console.log("arreServicio: ",arrServicios)      
       const servicioSeleccionado = await arrServicios.find((servicio) => {
-        return servicio.id_servicio === id;
+    
+        return servicio.id_servicio === parseInt(id);
       });
 
-      
+console.log("Servicio Seleccionado",servicioSeleccionado)      
       if (
         servicioSeleccionado === undefined ||
         servicioSeleccionado === "" ||
@@ -64,7 +66,7 @@ export default function DetalleServicio() {
               <div className="col-5">
                 <img
                   className="foto-servicio"
-                  src={foto == '' ? DESAYUNO_1 : require(`../../assets/img/${foto}`)}
+                  src={foto === '' ? DESAYUNO_1 : require(`../../assets/img/${foto}`)}
                   alt=""
                 />
               </div>
