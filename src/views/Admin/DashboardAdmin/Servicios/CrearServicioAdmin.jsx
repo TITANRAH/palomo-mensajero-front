@@ -131,6 +131,9 @@ export default function CrearServicioAdmin() {
               <option value={"DEFAULT"}>SELECCIONA UNA CATEGORIA...</option>
               <option value={"DESAYUNOS"}>DESAYUNOS</option>
               <option value={"SERENATAS"}>SERENATAS</option>
+              <option value={"ALMUERZOS"}>ALMUERZOS</option>
+              <option value={"CHOCOLATES"}>ALMUERZOS</option>
+              <option value={"SALUDO_SORPRESA"}>SALUDO_SORPRESA</option>
             </select>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function DetalleServicio() {
             <div className="col-5">
               <img
                 className="foto-servicio"
-                src={require("../../assets/img/DESAYUNO_1.jpeg")}
+                src={require(`../../assets/img/${servicioSel.img_src}`)}
                 alt=""
               />
             </div>
