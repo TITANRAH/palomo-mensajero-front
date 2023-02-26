@@ -19,8 +19,8 @@
 
 .form-img-icons {
     display: flex;
-    width: 7vh;
-    height: 7vh;
+     width: 3rem;
+    height: 3rem; 
     margin-left: 10vh;
     cursor: pointer;
     color: white;   

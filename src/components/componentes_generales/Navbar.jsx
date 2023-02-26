@@ -1,56 +1,66 @@
-import { NavLink,useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
-import { FaCartPlus} from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
 
 import palomoLogo from "../../assets/iconos/paloma-mensajera.png";
 import usePalomo from "../../hooks/usePalomo";
 
-
 function Navbar() {
-
-  const { usuarioGlobal,setUsuarioGlobal} = usePalomo();
-  console.log("Usuario GLobal", usuarioGlobal)
+  const { usuarioGlobal, setUsuarioGlobal } = usePalomo();
+  console.log("Usuario GLobal", usuarioGlobal);
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);
     localStorage.removeItem("token");
-    localStorage.removeItem("usuario")
+    localStorage.removeItem("usuario");
     navigate("/");
   };
-  
+
   //const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-active");
   return (
-<>
-    <nav className="navbar">
-    <NavLink to="/">
-    <span className="logo"><img className="imagen-nav" src={palomoLogo} alt="" /><span className="palomo">El Palomo Mensajero</span></span>
-    </NavLink>
-    <div className="opciones">
-      {usuarioGlobal.length===0? (
-        <div>
-          <NavLink to="/registro">
-            <button className="btn  m-1 btn-light">Registrarse</button>
-          </NavLink>
+    <>
+      <nav className="navbar">
+        <NavLink to="/">
+          <span className="logo">
+            <img className="imagen-nav" src={palomoLogo} alt="" />
+            <span className="palomo">El Palomo Mensajero</span>
+          </span>
+        </NavLink>
+        <div className="opciones">
+          {usuarioGlobal.length === 0 ? (
+            <div>
+              <NavLink to="/registro">
+                <button className="btn  m-1 btn-light">Registrarse</button>
+              </NavLink>
 
-          <NavLink to="/login">
-            <button className="btn btn-info">Iniciar Sesión</button>
-          </NavLink>
-        </div>
-      ) : (
-        <div className="logo">
-        <span className="palomo">Bienvenido, {usuarioGlobal.email} </span>
-          <NavLink to="/perfil">
-            <button className="btn  m-1 btn-light">Mi Perfil</button>
-          </NavLink>
-          <button onClick={logout} className="btn btn-danger">
-            Salir
-          </button>
-        </div>
-      )}
-    </div>
-  </nav>
+              <NavLink to="/login">
+                <button className="btn btn-info">Iniciar Sesión</button>
+              </NavLink>
+            </div>
+          ) : (
+            <div className="opciones">
+              <span className="palomo">Bienvenido, {usuarioGlobal.email} </span>
+              
+              <NavLink to="/perfil">
+                <button className="btn  m-1 btn-light">Mi Perfil</button>
+              </NavLink>
 
-    {/* <div className="nav">
+              <button onClick={logout} className="btn btn-danger">
+                Salir
+              </button>
+              {usuarioGlobal.id_rol === parseInt(1) ? (
+                <NavLink to="carrito">
+                  <FaCartPlus className="form-img-icons" />
+                </NavLink>
+              ) : (
+                ""
+              )}
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* <div className="nav">
       <div className="titulo">
         <NavLink className={setActiveClass} to="/">
           <img className="imagen-nav" src={palomoLogo} alt="" />

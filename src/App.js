@@ -18,6 +18,7 @@ import DashboardMensajero from "./views/Mensajero/DashboardMensajero";
 import Protected from "./utils/Protected";
 import ServicioContratado from "./views/Cliente/ServicioContratado";
 import MisPedidos from "./views/Cliente/MisPedidos";
+import Perfil from "./views/Perfil";
 
 function App() {
   const { usuarioGlobal, setUsuarioGlobal } = usePalomo();
@@ -42,7 +43,7 @@ function App() {
    
       <Routes>
         <Route path="/" element={<Home />} />
-
+        <Route path="/perfil" element={<Perfil />} />
         {/* ruta detalle servicio */}
 
         <Route
