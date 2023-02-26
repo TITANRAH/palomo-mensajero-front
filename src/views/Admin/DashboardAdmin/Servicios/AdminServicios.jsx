@@ -12,7 +12,7 @@ export default function AdminServicios() {
 
   return (
     <>
-      <div className="tabla-datos">
+      <div className="tabla-datos-admin-servicios">
         <table className="table">
           <thead className="thead-dark">
             <tr>

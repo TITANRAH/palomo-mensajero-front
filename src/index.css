@@ -14,6 +14,10 @@ body {
 }
 
 .servicio-contratado {
+  min-height: 69vh;
+}
+
+.tabla-crear{
   min-height: 66vh;
 }
 
@@ -346,6 +350,11 @@ body {
   padding: 5rem;
 }
 
+.tabla-datos-admin {
+  min-height: 74vh;
+  padding: 5rem;
+}
+
 .table {
   border: 1px solid;
 }
@@ -477,7 +486,7 @@ min-height: 25rem;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 69vh;
+  min-height: 74vh;
 }
 
 .caja-admin {
@@ -498,6 +507,11 @@ min-height: 25rem;
 .imagen-dashAdmin {
   display: flex;
   justify-content: center;
+}
+
+.tabla-datos-admin-servicios{
+  min-height: 74vh;
+  padding: 5rem;
 }
 
 .editar {

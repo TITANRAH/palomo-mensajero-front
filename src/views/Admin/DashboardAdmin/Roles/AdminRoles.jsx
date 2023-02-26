@@ -21,26 +21,14 @@ export default function AdminRoles() {
         icon: "warning",
       });
 
-    
-
     try {
-        const urlBase =
-      `https://proyecto-final-back-production-045b.up.railway.app/roles`;
-    
-     const token = localStorage.getItem("token");
-     console.log(token);
+      const urlBase = `https://proyecto-final-back-production-045b.up.railway.app/roles`;
+
+      const token = localStorage.getItem("token");
+      console.log(token);
       const res = await axios.delete(urlBase, {
-        
-        data: {id:id}
-      
+        data: { id: id },
       });
-      //   const res = await axios.delete(urlBase + endPoint, {
-
-      //      headers: { Authorization: "Bearer " + localStorage.getItem("token"),  data: {
-      //         id_roles: parseInt(id),
-      //       }, },
-
-      //     });
 
       if (res.status === 200) {
         MySwal.fire({
@@ -157,7 +145,7 @@ export default function AdminRoles() {
 
   return (
     <>
-      <div className="tabla-datos">
+      <div className="tabla-datos-admin">
         <h1>Editar Rol</h1>
         <hr />
         <table className="table">

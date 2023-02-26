@@ -74,7 +74,7 @@ export default function CrearServicioAdmin() {
   }
 
   return (
-    <div className="servicio-contratado mt-5 mb-5">
+    <div className=" tabla-crear mt-5 mb-5">
       <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
         <h1>Crear Servicio</h1>
         <hr />
