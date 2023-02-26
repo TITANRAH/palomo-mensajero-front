@@ -310,12 +310,6 @@ body {
   min-height: 60vh;
 }
 
-
-
-.card-body p{
-  min-height: 15vh;
-}
-
 .card {
   width: 17rem;
 }
@@ -323,6 +317,10 @@ body {
 .cont-img-card{
   width: 100%;
   height: 35vh;
+}
+
+.card-body p{
+  min-height: 15vh;
 }
 
 .card-img-top{

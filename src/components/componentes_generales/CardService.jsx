@@ -12,7 +12,7 @@ function CardService({ servicio }) {
   return (
     <div className="carta">
       <div className="card caja-img">
-        <div className="imagen-home">
+        <div className="cont-img-card">
         <img
           className="card-img-top"
           src={require(`../../assets/img/${servicio.img_src}`)}
