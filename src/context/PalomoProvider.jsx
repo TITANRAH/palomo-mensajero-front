@@ -9,7 +9,7 @@ const PalomoContext = createContext({});
 function PalomoProvider({ children }) {
   const navigate = useNavigate();
   const [arrServicios, setArrServicios] = useState([]);
-  const [usuarioGlobal, setUsuarioGlobal] = useState({});
+  const [usuarioGlobal, setUsuarioGlobal] = useState([]);
   const [servicioSel, setServicioSel] = useState({});
   const [serviciosCarrito, setServiciosCarrito] = useState([]);
   const [servicioContratado, setServicioContratado] = useState([]);
@@ -51,7 +51,7 @@ function PalomoProvider({ children }) {
     try {
       const options = {
         method: "GET",
-        url: `https://proyecto-final-back-production-045b.up.railway.app/todos_servicios_contratados`,
+        url: `https://proyecto-final-back-production-045b.up.railway.app/servicios_contratados_usuarios`,
 
         headers: { Authorization: "Bearer " + token },
 

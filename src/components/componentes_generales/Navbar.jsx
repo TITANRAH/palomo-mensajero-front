@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 
 import { FaCartPlus} from "react-icons/fa";
 
@@ -8,10 +8,49 @@ import usePalomo from "../../hooks/usePalomo";
 
 function Navbar() {
 
-  const { totalComprasServicios } = usePalomo();
-  const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-active");
+  const { usuarioGlobal,setUsuarioGlobal} = usePalomo();
+  console.log("Usuario GLobal", usuarioGlobal)
+  const navigate = useNavigate();
+  const logout = () => {
+    setUsuarioGlobal([]);
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario")
+    navigate("/");
+  };
+  
+  //const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-active");
   return (
-    <div className="nav">
+<>
+    <nav className="navbar">
+    <NavLink to="/">
+    <span className="logo"><img className="imagen-nav" src={palomoLogo} alt="" /><span className="palomo">El Palomo Mensajero</span></span>
+    </NavLink>
+    <div className="opciones">
+      {usuarioGlobal.length===0? (
+        <div>
+          <NavLink to="/registro">
+            <button className="btn  m-1 btn-light">Registrarse</button>
+          </NavLink>
+
+          <NavLink to="/login">
+            <button className="btn btn-info">Iniciar Sesión</button>
+          </NavLink>
+        </div>
+      ) : (
+        <div className="logo">
+        <span className="palomo">Bienvenido, {usuarioGlobal.email} </span>
+          <NavLink to="/perfil">
+            <button className="btn  m-1 btn-light">Mi Perfil</button>
+          </NavLink>
+          <button onClick={logout} className="btn btn-danger">
+            Salir
+          </button>
+        </div>
+      )}
+    </div>
+  </nav>
+
+    {/* <div className="nav">
       <div className="titulo">
         <NavLink className={setActiveClass} to="/">
           <img className="imagen-nav" src={palomoLogo} alt="" />
@@ -33,7 +72,8 @@ function Navbar() {
           </NavLink>
         </div>
       </div>
-    </div>   
+    </div>    */}
+    </>
   );
 }
 

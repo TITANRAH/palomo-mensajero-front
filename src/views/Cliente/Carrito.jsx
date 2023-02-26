@@ -53,13 +53,13 @@ export default function Carrito() {
 
   return (
     <>
-      <div className="detalle-contenedor mt-5 p-4">
+      <div className="detalle-contenedor carrito-serv mt-5 p-4">
         <div className="detalle">
           <ul>
             {serviciosCarrito.length === 0 ? (
               <div className="carrito-vacío pt-3">
                 <h4>El carrito esta vacío</h4>
-                <a onClick={() => irAhome()} href="/">
+                <a className="irhome" onClick={() => irAhome()} href="/">
                   IR A HOME
                 </a>
               </div>
@@ -71,7 +71,7 @@ export default function Carrito() {
                       <img
                         className="imagen-detalle"
                         src={require(`../../assets/img/${s.img_src}`)}
-                        alt="foto"
+                        alt="fotos"
                       />
                       <h3 className="ml-3">Servicio: {s.titulo}</h3>
                       <h3 className="categoria">

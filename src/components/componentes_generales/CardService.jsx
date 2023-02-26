@@ -5,7 +5,7 @@ function CardService({ servicio }) {
   const navigate = useNavigate();
 
   const irServicio = (id_servicio) => {
-    console.log(id_servicio);
+    console.log("ID_servicio: ",id_servicio);
     navigate(`/servicio/${id_servicio}`);
   };
 

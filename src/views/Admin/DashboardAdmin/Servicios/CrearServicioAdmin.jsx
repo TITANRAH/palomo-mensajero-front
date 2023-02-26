@@ -74,7 +74,7 @@ export default function CrearServicioAdmin() {
   }
 
   return (
-    <div className="servicio-contratado mt-5 mb-5">
+    <div className=" tabla-crear mt-5 mb-5">
       <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
         <h1>Crear Servicio</h1>
         <hr />
@@ -132,7 +132,7 @@ export default function CrearServicioAdmin() {
               <option value={"DESAYUNOS"}>DESAYUNOS</option>
               <option value={"SERENATAS"}>SERENATAS</option>
               <option value={"ALMUERZOS"}>ALMUERZOS</option>
-              <option value={"CHOCOLATES"}>ALMUERZOS</option>
+              <option value={"CHOCOLATES"}>CHOCOLATES</option>
               <option value={"SALUDO_SORPRESA"}>SALUDO_SORPRESA</option>
             </select>
           </div>

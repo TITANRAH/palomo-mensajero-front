@@ -9,11 +9,11 @@ function MensajeroServiciosContratados({ servicio }) {
    let claseEncurso = "";
   
   if (servicio.id_estado === 1) {
-    textEstado = "CONTRATADO";
+   // textEstado = "CONTRATADO";
     claseEncurso = "btn btn-warning"
     
   } else {
-    textEstado = "EN CURSO";
+   // textEstado = "EN CURSO";
     claseEncurso = "btn btn-success"
   }
 
@@ -23,15 +23,12 @@ function MensajeroServiciosContratados({ servicio }) {
     const urlServer = `https://proyecto-final-back-production-045b.up.railway.app/servicio_contratado`;
     const token = localStorage.getItem("token");
 
-    if (idEstado === 1) {
+    if (idEstado === 1) 
       idEstado = 2;
-      textEstado = "EN CURSO";
-    } else {
+    else 
       idEstado = 1;
-      textEstado = "CONTRATADO";
-    }
 
-    const estadoPedido = {
+      const estadoPedido = {
       id_estado: idEstado,
       id_serv_contratados: idServContratado,
     };
@@ -49,9 +46,8 @@ function MensajeroServiciosContratados({ servicio }) {
 
   return (
     <>
-      <th scope="row">{servicio.id_usuario}</th>
-
-      <td>{servicio.id_servicio}</td>
+      <th scope="row">{servicio.nombre} {servicio.apellido}</th>
+      <td>{servicio.titulo}</td>
       <td>{servicio.direccion_envio}</td>
       <td>
         <button
@@ -61,7 +57,7 @@ function MensajeroServiciosContratados({ servicio }) {
             setActive(!active);
           }}
         >
-          {textEstado}
+          {servicio.estado}
         </button>
       </td>
     </>

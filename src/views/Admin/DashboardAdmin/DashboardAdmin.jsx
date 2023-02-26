@@ -1,4 +1,4 @@
-import usePalomo from "../../../hooks/usePalomo";
+
 import { useNavigate } from "react-router-dom";
 import CajaDashboardAdmin from "./admin_components/CajaDashboardAdmin";
 import admin_crear_rol from "../../../assets/iconos/admin_crear_rol.png"
