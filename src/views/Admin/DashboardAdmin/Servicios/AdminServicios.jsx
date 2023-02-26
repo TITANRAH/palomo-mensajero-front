@@ -1,9 +1,10 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import usePalomo from "../../../../hooks/usePalomo";
 
 export default function AdminServicios() {
   const { servicios, getServicios, eliminarServicio } = usePalomo();
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     getServicios();
@@ -46,6 +47,12 @@ export default function AdminServicios() {
             </tbody>
           ))}
         </table>
+        <button
+          onClick={() => navigate("/dashboardAdmin")}
+          className="btn btn-success mt-3 boton-servicio"
+        >
+          VOLVER A DASHBOARD
+        </button>
       </div>
     </>
   );

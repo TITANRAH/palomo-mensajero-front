@@ -449,11 +449,11 @@ body {
 
   .tabla-datos-admin-servicios {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
   }
 
   .table {
-    width: 70%;
+    width: 100%;
   }
 
   .form-control {
@@ -474,6 +474,10 @@ body {
       text-align: justify;
       overflow: scroll;
     }
+
+  .boton-servicio{
+    width: 50%;
+  }
 }
 
 .hr-banner {
