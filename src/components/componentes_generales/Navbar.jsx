@@ -34,7 +34,7 @@ function Navbar() {
           </div>
         ) : (
           <div className="cart">
-            <table cellspacing="5" cellpadding="10">
+            <table cellSpacing="5" cellPadding="10">
               <tr>
                 <td align="right">
                   <span className="palomo">
@@ -47,21 +47,23 @@ function Navbar() {
                   </button>
                 </td>
                 <td></td>
-                <td align="center">
+                
                   {usuarioGlobal.id_rol === parseInt(1) ? (
-                    <NavLink to="carrito">
-                      <i class="fa-solid fa-cart-plus fa-xl"></i>
-                    </NavLink>
+                    <><td align="center">
+                      <NavLink to="carrito">
+                        <i class="fa-solid fa-cart-plus fa-xl"></i>
+                      </NavLink>
+                      </td>
+                      <td>
+                        <span>
+                          <strong>${totalComprasServicios}</strong>
+                        </span>
+                      </td>
+                      </>
                   ) : (
                     ""
                   )}
-                </td>
-
-                <td>
-                  <span>
-                    <strong>${totalComprasServicios}</strong>
-                  </span>
-                </td>
+                
               </tr>
             </table>
           </div>
