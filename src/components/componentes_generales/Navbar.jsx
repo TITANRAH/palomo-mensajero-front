@@ -6,8 +6,7 @@ import palomoLogo from "../../assets/iconos/paloma-mensajera.png";
 import usePalomo from "../../hooks/usePalomo";
 
 function Navbar() {
-  const { usuarioGlobal, setUsuarioGlobal } = usePalomo();
-  console.log("Usuario GLobal", usuarioGlobal);
+  const { usuarioGlobal,setUsuarioGlobal} = usePalomo();
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);

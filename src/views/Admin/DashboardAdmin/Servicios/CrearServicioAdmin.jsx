@@ -14,8 +14,7 @@ export default function CrearServicioAdmin() {
     setServicio({ ...servicio, ...field });
   };
 
-  async function createServiceAdmin() {
-    console.log("servicio", servicio);
+  async function createServiceAdmin() {;
 
     if (
       !servicio.titulo ||

@@ -23,13 +23,6 @@ function PalomoProvider({ children }) {
   );
   const MySwal = withReactContent(Swal);
 
-  console.log(
-    "servicios añadidos serviciosCarrito desde context",
-    serviciosCarrito
-  );
-
-  console.log("usuario global desde context", usuarioGlobal);
-
   const getServices = async () => {
     try {
       const options = {
@@ -39,15 +32,12 @@ function PalomoProvider({ children }) {
 
       await axios.request(options).then((response) => {
         setArrServicios(response.data);
-
-        console.log("respuesta de api", response);
       });
     } catch (error) { }
   };
 
   const getContractServices = async () => {
     const token = localStorage.getItem("token");
-    console.log("Entre al servicios contratados")
     try {
       const options = {
         method: "GET",
@@ -59,8 +49,6 @@ function PalomoProvider({ children }) {
 
       await axios.request(options).then((response) => {
         setServicioContratado(response.data);
-
-        console.log("respuesta de api", response);
       });
     } catch (error) { }
   };

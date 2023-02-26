@@ -16,16 +16,10 @@ export default function Carrito() {
     navigate(`/`);
   }
 
-  console.log("serviciosCarrito desde carrito", serviciosCarrito);
-
   const obtenerCategoria = (id_categoria) => {
-    console.log("id_categoria", id_categoria);
-
     const categoria = serviciosCarrito.find((s) => {
       return s.id_categoria === id_categoria;
     });
-
-    console.log("categoria", categoria.id_categoria);
 
     switch (categoria.id_categoria) {
       case 1:
@@ -45,8 +39,6 @@ export default function Carrito() {
 
   const contratarServicio = (servicio) => {
     setServicioContratado(servicio);
-
-    console.log("id servicio", servicio.id_servicio);
 
     navigate(`/servicio_contratado/${servicio.id_servicio}`);
   };

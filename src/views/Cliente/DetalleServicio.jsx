@@ -7,14 +7,11 @@ import DESAYUNO_1 from "../../assets/img/DESAYUNO_1.jpeg";
 
 export default function DetalleServicio() {
   const { id } = useParams();
-  // var foto = ''
   const [foto, setFoto] = useState('')
 
-  console.log("id_servicio", id);
   const { arrServicios, MySwal, servicioSel, setServicioSel, add } =
     usePalomo();
 
-  console.log("arrServicios", arrServicios);
   const navigate = useNavigate();
 
   function swal() {
@@ -52,7 +49,6 @@ export default function DetalleServicio() {
 
     servicio();
 
-    // foto = `../../assets/img/${servicioSel.img_src}` ;
   }, []);
 
   return (

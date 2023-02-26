@@ -25,7 +25,6 @@ export default function AdminRoles() {
       const urlBase = `https://proyecto-final-back-production-045b.up.railway.app/roles`;
 
       const token = localStorage.getItem("token");
-      console.log(token);
       const res = await axios.delete(urlBase, {
         data: { id: id },
       });
@@ -73,8 +72,6 @@ export default function AdminRoles() {
         icon: "warning",
       });
 
-    console.log(editRol);
-
     const rolAeditar = {
       id_roles: parseInt(id),
       id_rol: editRol.id_rol,
@@ -121,8 +118,6 @@ export default function AdminRoles() {
         icon: "error",
       });
     }
-
-    console.log("rol a editar", rolAeditar);
   }
 
   const handleEditRol = ({ target: { value, name } }) => {
