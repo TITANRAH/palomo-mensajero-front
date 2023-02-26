@@ -1,12 +1,7 @@
-
-// import pizzaBoton from "../assets/pizza.png";
 import { useNavigate } from "react-router-dom";
-// import usePalomo from "../../hooks/usePalomo";
 
 function CardService({ servicio }) {
-  console.log(servicio.img_src);
-  //   const { add } = usePizza();
-  
+
   const navigate = useNavigate();
 
   const irServicio = (id_servicio) => {
@@ -17,25 +12,25 @@ function CardService({ servicio }) {
   return (
     <div className="carta">
       <div className="card">
-        <img
-          className="card-img-top"
-          src={require("../../assets/img/DESAYUNO_1.jpeg")}
-          alt="serv"
-        />
+        <div className="cont-img-card">
+          <img
+            className="card-img-top"
+            src={require("../../assets/img/DESAYUNO_1.jpeg")}
+            alt="serv"
+          />
+        </div>
         <div className="card-body">
           <h5 className="card-title">{servicio.titulo} </h5>
           <hr />
-
-          <p>{servicio.descripcion}</p>
-
+          <div className="cont-descripcion">
+            <p>{servicio.descripcion}</p>
+          </div>
           <hr />
-
           <div className="precio">
             <h3>
               <b>$ {servicio.precio}</b>
             </h3>
           </div>
-
           <div className="botones mt-2">
             <button
               className="btn btn-info"
@@ -48,7 +43,6 @@ function CardService({ servicio }) {
                 alt="ojo"
               />
             </button>
-
           </div>
         </div>
       </div>
