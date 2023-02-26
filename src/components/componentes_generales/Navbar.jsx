@@ -34,38 +34,32 @@ function Navbar() {
           </div>
         ) : (
           <div className="cart">
-            <table cellSpacing="5" cellPadding="10">
-              <tr>
-                <td align="right">
-                  <span className="palomo">
-                    <strong>Bienvenido</strong>, {usuarioGlobal.email}{" "}
-                  </span>
-                </td>
-                <td>
-                  <button onClick={logout} className="btn btn-danger">
-                    Salir
-                  </button>
-                </td>
-                <td></td>
-                
-                  {usuarioGlobal.id_rol === parseInt(1) ? (
-                    <><td align="center">
-                      <NavLink to="carrito">
-                        <i class="fa-solid fa-cart-plus fa-xl"></i>
-                      </NavLink>
-                      </td>
-                      <td>
-                        <span>
-                          <strong>${totalComprasServicios}</strong>
-                        </span>
-                      </td>
-                      </>
-                  ) : (
-                    ""
-                  )}
-                
-              </tr>
-            </table>
+            
+              <div>
+                <span className="palomo">
+                  <strong>Bienvenido</strong>, {usuarioGlobal.email}{" "}
+                </span>
+
+                <button onClick={logout} className="btn btn-danger">
+                  Salir
+                </button>
+              </div>
+              {usuarioGlobal.id_rol === parseInt(1) ? (
+                <>
+                  <div>
+                    <NavLink to="carrito">
+                      <i className="fa-solid fa-cart-plus fa-xl"></i>
+                    </NavLink>
+
+                    <span>
+                      <strong>${totalComprasServicios}</strong>
+                    </span>
+                  </div>
+                </>
+              ) : (
+                ""
+              )}
+            
           </div>
         )}
       </div>
