@@ -93,14 +93,14 @@ export default function LoginForm() {
       <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
         <h2>Iniciar Sesión</h2>
         <hr />
-        <div className="form-group mt-1 ">
+        <div className="form-group mt-1">
           <label>Email</label>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             name="email"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa tu email"
           />
         </div>
@@ -111,7 +111,7 @@ export default function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             name="password"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa tu password"
           />
         </div>

@@ -90,7 +90,7 @@ export default function ServicioContratado() {
             onChange={(e) => handlerDireccion(e)}
             type="text"
             name="direccion"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa la dirección"
           />
           <label className="mt-4">
@@ -103,7 +103,7 @@ export default function ServicioContratado() {
                 readOnly
                 type="text"
                 name="tarjeta"
-                className="form-control"
+                className="form-input"
                 placeholder="XXXX-XXXX-XXXX-4321"
               />
             </div>
@@ -114,7 +114,7 @@ export default function ServicioContratado() {
                 readOnly
                 type="text"
                 name="tarjeta"
-                className="form-control"
+                className="form-input"
                 placeholder="XX4"
               />
             </div>

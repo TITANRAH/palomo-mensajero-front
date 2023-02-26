@@ -23,7 +23,7 @@ export default function DashboardMensajero() {
               <tr>
                 <th scope="col">Cliente</th>
                 <th scope="col">Servicio</th>
-                <th scope="col">Dirección</th>
+                <th scope="col" className="column-direccion">Dirección</th>
                 <th scope="col">Estado</th>
               </tr>
             </thead>

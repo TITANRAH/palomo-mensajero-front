@@ -65,8 +65,8 @@ export default function Carrito() {
                         src={require(`../../assets/img/${s.img_src}`)}
                         alt="fotos"
                       />
-                      <h5 className="ml-3">Servicio: {s.titulo}</h5>
-                      <h5 className="categoria">
+                      <h5 className="ml-3 column-direccion">Servicio: {s.titulo}</h5>
+                      <h5 className="categoria column-direccion">
                         Categoria: {obtenerCategoria(s.id_categoria)}
                       </h5>
                     </div>
@@ -79,7 +79,7 @@ export default function Carrito() {
                         +
                       </button> */}
 
-                      <h5>
+                      <h5 className="text-responsive">
                         {" "}
                         Descripción: Llevas {s.count} servicio de {s.titulo} que cuesta ${" "}
                         {s.precio}
@@ -87,14 +87,14 @@ export default function Carrito() {
 
                       <button
                         onClick={() => restar(s.id_servicio)}
-                        className="btn btn-danger ml-5"
+                        className="btn btn-danger ml-5 boton-responsive"
                       >
                         QUITAR
                       </button>
 
                       <button
                         onClick={() => contratarServicio(s)}
-                        className="btn btn-warning"
+                        className="btn btn-warning boton-responsive"
                       >
                         PAGAR
                       </button>

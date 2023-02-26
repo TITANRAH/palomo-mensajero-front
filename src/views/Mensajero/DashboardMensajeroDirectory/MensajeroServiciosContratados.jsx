@@ -43,11 +43,11 @@ function MensajeroServiciosContratados({ servicio }) {
       <th scope="row">
         {servicio.nombre} {servicio.apellido}
       </th>
-      <td>{servicio.titulo}</td>
-      <td>{servicio.direccion_envio}</td>
+      <td className="formato-titulo-servicio">{servicio.titulo}</td>
+      <td className="column-direccion">{servicio.direccion_envio}</td>
       <td>
         <button
-          className={`${claseEncurso} ${active ? "active" : ""}`}
+          className={`${claseEncurso} ${active ? "active" : ""} boton-responsive`}
           onClick={() => {
             cambiarEstado(servicio.id_serv_contratados, servicio.id_estado);
             setActive(!active);

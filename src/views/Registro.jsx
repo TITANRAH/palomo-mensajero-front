@@ -58,7 +58,7 @@ export default function Registro() {
             onChange={handleSetRegistroUsuario}
             type="text"
             name="nombre"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa tu nombre"
           />
         </div>
@@ -69,7 +69,7 @@ export default function Registro() {
             onChange={handleSetRegistroUsuario}
             type="text"
             name="apellido"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa tu apellido"
           />
         </div>
@@ -80,7 +80,7 @@ export default function Registro() {
             onChange={handleSetRegistroUsuario}
             type="email"
             name="email"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa tu email"
           />
         </div>
@@ -91,7 +91,7 @@ export default function Registro() {
             onChange={handleSetRegistroUsuario}
             type="password"
             name="password"
-            className="form-control"
+            className="form-input"
             placeholder="Ingresa tu password"
           />
         </div>

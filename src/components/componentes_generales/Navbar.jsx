@@ -33,33 +33,31 @@ function Navbar() {
             </NavLink>
           </div>
         ) : (
-          <div className="cart">
-            
-              <div>
-                <span className="palomo">
-                  <strong>Bienvenido</strong>, {usuarioGlobal.email}{" "}
-                </span>
+          <div className="container">
+            <div className="col-auto">
+              <span className="palomo">
+                <strong>Bienvenido</strong>, {usuarioGlobal.email}{" "}
+              </span>
 
-                <button onClick={logout} className="btn btn-danger">
-                  Salir
-                </button>
-              </div>
-              {usuarioGlobal.id_rol === parseInt(1) ? (
-                <>
-                  <div>
-                    <NavLink to="carrito">
-                      <i className="fa-solid fa-cart-plus fa-xl"></i>
-                    </NavLink>
+              <button onClick={logout} className="btn btn-danger">
+                Salir
+              </button>
+            </div>
+            {usuarioGlobal.id_rol === parseInt(1) ? (
+              <>
+                <div className="col-auto">
+                  <NavLink to="carrito">
+                    <i className="fa-solid fa-cart-plus fa-xl"></i>
+                  </NavLink>
 
-                    <span>
-                      <strong>${totalComprasServicios}</strong>
-                    </span>
-                  </div>
-                </>
-              ) : (
-                ""
-              )}
-            
+                  <span>
+                    <strong> ${totalComprasServicios} </strong>
+                  </span>
+                </div>
+              </>
+            ) : (
+              ""
+            )}
           </div>
         )}
       </div>
