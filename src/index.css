@@ -292,6 +292,21 @@ body {
   margin-top: 5rem;
 }
 
+.imagen-boton {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.precio {
+  text-align: center;
+}
+
 .tabla-datos {
   min-height: 70vh;
   padding: 5rem;
@@ -307,7 +322,6 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   margin: 1rem;
-  min-height: 60vh;
 }
 
 .card {
@@ -317,10 +331,6 @@ body {
 .cont-img-card{
   width: 100%;
   height: 35vh;
-}
-
-.card-body p{
-  min-height: 15vh;
 }
 
 .card-img-top{
@@ -336,21 +346,6 @@ body {
   height: 20vh;
   text-align: justify;
 
-}
-
-.precio {
-  text-align: center;
-}
-
-.botones {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.imagen-boton {
-  width: 1.1rem;
-  height: 1.1rem;
 }
 
 .precio-servicio-unico {
