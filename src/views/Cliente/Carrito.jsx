@@ -32,21 +32,24 @@ export default function Carrito() {
         return "DESAYUNOS";
       case 2:
         return "SERENATAS";
-      default: 
-               return
+      case 3:
+        return "ALMUERZOS";
+      case 4:
+        return "CHOCOLATES";
+      case 5:
+        return "SALUDO_SORPRESA";
+      default:
+        return;
     }
   };
 
-  const contratarServicio = (servicio) =>{
+  const contratarServicio = (servicio) => {
+    setServicioContratado(servicio);
 
-    setServicioContratado(servicio)
+    console.log("id servicio", servicio.id_servicio);
 
-    console.log('id servicio', servicio.id_servicio)
-
-    navigate(`/servicio_contratado/${servicio.id_servicio}`)
-  }
-
-  
+    navigate(`/servicio_contratado/${servicio.id_servicio}`);
+  };
 
   return (
     <>
@@ -67,7 +70,7 @@ export default function Carrito() {
                     <div className="detalle-imagen-nombre">
                       <img
                         className="imagen-detalle"
-                        src={require("../../assets/img/DESAYUNO_1.jpeg")}
+                        src={require(`../../assets/img/${s.img_src}`)}
                         alt="foto"
                       />
                       <h3 className="ml-3">Servicio: {s.titulo}</h3>
@@ -77,8 +80,6 @@ export default function Carrito() {
                     </div>
 
                     <div className="detalle-botones">
-                    
-
                       {/* <button
                         onClick={() => add(s)}
                         className="btn btn-success"
@@ -86,7 +87,11 @@ export default function Carrito() {
                         +
                       </button> */}
 
-                      <h3> Llevas {s.count} servicio de {s.titulo} que cuesta $ {s.precio}</h3>
+                      <h3>
+                        {" "}
+                        Llevas {s.count} servicio de {s.titulo} que cuesta ${" "}
+                        {s.precio}
+                      </h3>
 
                       <button
                         onClick={() => restar(s.id_servicio)}
@@ -96,7 +101,7 @@ export default function Carrito() {
                       </button>
 
                       <button
-                        onClick={()=>contratarServicio(s)}
+                        onClick={() => contratarServicio(s)}
                         className="btn btn-warning"
                       >
                         PAGAR
@@ -113,7 +118,9 @@ export default function Carrito() {
           {serviciosCarrito.length > 0 ? (
             <div className="total-pagar mt-3">
               <h2>Total: ${totalComprasServicios}</h2>
-              <button className="btn btn-success" onClick={()=> irAhome()}>IR A HOME</button>
+              <button className="btn btn-success" onClick={() => irAhome()}>
+                IR A HOME
+              </button>
             </div>
           ) : (
             <div></div>

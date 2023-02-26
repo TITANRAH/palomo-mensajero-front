@@ -200,32 +200,57 @@ function PalomoProvider({ children }) {
     );
   }
 
-  async function editarServicio(id_servicio){
-    const urlServer =
-      "https://proyecto-final-back-production-045b.up.railway.app";
-    const endpoint = "/servicios";
-    const token = localStorage.getItem("token");
-    const resp = await axios.get(urlServer + endpoint, {
-      headers: { Authorization: "Bearer " + token },
-    });
-    
-    if (resp.status === 200) {
-      setServicios(resp.data);
-      console.log(servicios)
-    } else {
+  async function eliminarServicio(id_servicio) {
+
+    if (!id_servicio)
+      return MySwal.fire({
+        title: <strong>Alerta</strong>,
+        html: <i>No se encontro el servicio</i>,
+        icon: "warning",
+
+      });
+
+    try {
+      const urlServer =
+        "https://proyecto-final-back-production-045b.up.railway.app";
+      const endpoint = `/servicio/${id_servicio}`;
+      const token = localStorage.getItem("token");
+      const res = await axios.delete(urlServer + endpoint, {
+        headers: { Authorization: "Bearer " + token },
+      });
+
+      if (res.status === 200) {
+        MySwal.fire({
+          title: <strong>Éxito</strong>,
+          html: <i>El servicio se ha eliminado éxitosamente</i>,
+          icon: "success",
+          showCancelButton: true,
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Eliminar otro Servicio",
+          cancelButtonText: "Ir a Dashboard",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            getServicios();
+            navigate("/admin_servicios");
+          } else {
+            navigate("/dashboardAdmin");
+          }
+        });
+      } else {
+        MySwal.fire({
+          title: <strong>Alerta</strong>,
+          html: <i>Ha ocurrido un error</i>,
+          icon: "warning",
+        });
+      }
+    } catch (error) {
       MySwal.fire({
         title: <strong>Error !</strong>,
-        html: <i>No se logro actualizar el servicio.</i>,
-        icon: "warning",
-      }).then(() => {
-        navigate("/dashboarServicio");
+        html: <i>Vuelve a intentarlo!</i>,
+        icon: "error",
       });
+      console.log(error);
     }
-    
-  }
-
-  function eliminarServicio(id_servicio){
-    
   }
 
   return (
@@ -256,7 +281,6 @@ function PalomoProvider({ children }) {
         setRoles,
         getServicios,
         servicios,
-        editarServicio,
         eliminarServicio
       }}
     >
