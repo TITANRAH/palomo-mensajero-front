@@ -1,12 +1,10 @@
 import { NavLink, useNavigate } from "react-router-dom";
-
-import { FaCartPlus } from "react-icons/fa";
-
 import palomoLogo from "../../assets/iconos/paloma-mensajera.png";
 import usePalomo from "../../hooks/usePalomo";
 
 function Navbar() {
-  const { usuarioGlobal,setUsuarioGlobal} = usePalomo();
+  const { usuarioGlobal, setUsuarioGlobal, totalComprasServicios } =
+    usePalomo();
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);
@@ -15,74 +13,61 @@ function Navbar() {
     navigate("/");
   };
 
-  //const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-active");
   return (
-    <>
-      <nav className="navbar">
-        <NavLink to="/">
-          <span className="logo">
-            <img className="imagen-nav" src={palomoLogo} alt="" />
-            <span className="palomo">El Palomo Mensajero</span>
-          </span>
-        </NavLink>
-        <div className="opciones">
-          {usuarioGlobal.length === 0 ? (
-            <div>
-              <NavLink to="/registro">
-                <button className="btn  m-1 btn-light">Registrarse</button>
-              </NavLink>
-
-              <NavLink to="/login">
-                <button className="btn btn-info">Iniciar Sesión</button>
-              </NavLink>
-            </div>
-          ) : (
-            <div className="opciones">
-              <span className="palomo">Bienvenido, {usuarioGlobal.email} </span>
-              
-              <NavLink to="/perfil">
-                <button className="btn  m-1 btn-light">Mi Perfil</button>
-              </NavLink>
-
-              <button onClick={logout} className="btn btn-danger">
-                Salir
-              </button>
-              {usuarioGlobal.id_rol === parseInt(1) ? (
-                <NavLink to="carrito">
-                  <FaCartPlus className="form-img-icons" />
-                </NavLink>
-              ) : (
-                ""
-              )}
-            </div>
-          )}
-        </div>
-      </nav>
-
-      {/* <div className="nav">
-      <div className="titulo">
-        <NavLink className={setActiveClass} to="/">
+    <nav className="navbar">
+      <NavLink to="/">
+        <span className="logo">
           <img className="imagen-nav" src={palomoLogo} alt="" />
-        </NavLink>
-        <h3>El Palomo Mensajero !</h3>
+          <span className="palomo">El Palomo Mensajero</span>
+        </span>
+      </NavLink>
+      <div>
+        {usuarioGlobal.length === 0 ? (
+          <div>
+            <NavLink to="/registro">
+              <button className="btn  m-1 btn-light">Registrarse</button>
+            </NavLink>
+
+            <NavLink to="/login">
+              <button className="btn btn-info">Iniciar Sesión</button>
+            </NavLink>
+          </div>
+        ) : (
+          <div className="cart">
+            <table cellspacing="5" cellpadding="10">
+              <tr>
+                <td align="right">
+                  <span className="palomo">
+                    <strong>Bienvenido</strong>, {usuarioGlobal.email}{" "}
+                  </span>
+                </td>
+                <td>
+                  <button onClick={logout} className="btn btn-danger">
+                    Salir
+                  </button>
+                </td>
+                <td></td>
+                <td align="center">
+                  {usuarioGlobal.id_rol === parseInt(1) ? (
+                    <NavLink to="carrito">
+                      <i class="fa-solid fa-cart-plus fa-xl"></i>
+                    </NavLink>
+                  ) : (
+                    ""
+                  )}
+                </td>
+
+                <td>
+                  <span>
+                    <strong>${totalComprasServicios}</strong>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        )}
       </div>
-      <div className='form-cont-login'>
-        <NavLink className={setActiveClass} to="login">
-          <h4 className='form-tit-navbar'> Inicio de Sesión</h4>
-        </NavLink>
-      </div>
-      <div className="carrito">
-        <div className="cont-titulo-car">
-          <h4>${totalComprasServicios}</h4>
-        </div>
-        <div className="cont-img-car">
-          <NavLink className={setActiveClass} to="carrito">
-          <FaCartPlus className='form-img-icons' />
-          </NavLink>
-        </div>
-      </div>
-    </div>    */}
-    </>
+    </nav>
   );
 }
 
