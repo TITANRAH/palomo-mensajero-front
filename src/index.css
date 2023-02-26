@@ -273,9 +273,10 @@ body {
 
 .form-desc-serv {
   font-size: medium;
-  height: 14vh;
+  height: 8vh;
   width: 100%;
   text-align: justify;
+  overflow: scroll;
 }
 
 @media (max-width: 767px) {
@@ -370,9 +371,9 @@ body {
   .form-desc-serv {
     display: none;
   }
-  .prueba{
-    width: 100%!important
-    
+
+  .form-desc-serv-tabla{
+    display: none;
   }
 
 }
@@ -464,15 +465,15 @@ body {
     width: 27vh;
     font-size: small;
     height: 8vh;
-  }
-
-  .form-desc-serv {
-    font-size: small;
-    height: 12vh;
-    width: 55vh;
-    text-align: justify;
-  }
-
+    }
+    
+    .form-desc-serv {
+      font-size: small;
+      height: 8vh;
+      width: 100%;
+      text-align: justify;
+      overflow: scroll;
+    }
 }
 
 .hr-banner {

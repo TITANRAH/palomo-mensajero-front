@@ -14,12 +14,12 @@ export default function AdminServicios() {
     <>
       <div className="tabla-datos-admin-servicios">
         <table className="table">
-          <thead className="thead-dark prueba">
-            <tr>
+          <thead className="thead-dark">
+            <tr className="">
               <th scope="col">#</th>
               <th scope="col">Servicio</th>
               <th scope="col">Nombre</th>
-              <th scope="col" className="form-desc-serv">Descripción</th>
+              <th scope="col" className="form-desc-serv-tabla">Descripción</th>
               <th scope="col"><i className="bi bi-trash eliminar"></i></th>
             </tr>
           </thead>
@@ -33,7 +33,7 @@ export default function AdminServicios() {
                 <td>
                   <label className="form-control form-tit-serv">{s.titulo}</label>
                 </td>
-                <td>
+                <td className="form-desc-serv-tabla">
                   <label className="form-control form-desc-serv">{s.descripcion}</label>
                 </td>
                 <td>
