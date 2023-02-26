@@ -71,7 +71,7 @@ export default function Carrito() {
                       <img
                         className="imagen-detalle"
                         src={require(`../../assets/img/${s.img_src}`)}
-                        alt="foto"
+                        alt="fotos"
                       />
                       <h3 className="ml-3">Servicio: {s.titulo}</h3>
                       <h3 className="categoria">
