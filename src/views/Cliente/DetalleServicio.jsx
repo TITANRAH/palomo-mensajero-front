@@ -73,7 +73,7 @@ export default function DetalleServicio() {
 
                 <div className="cont-precio-btn">
                   <h4>
-                    <b>Precio : $ {servicioSel.precio}</b>
+                    <b>Precio : $ {Intl.NumberFormat('de-DE').format(servicioSel.precio)}</b>
                   </h4>
 
                   <div className="botones mt-2">

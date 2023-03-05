@@ -72,17 +72,10 @@ export default function Carrito() {
                     </div>
 
                     <div className="detalle-botones">
-                      {/* <button
-                        onClick={() => add(s)}
-                        className="btn btn-success"
-                      >
-                        +
-                      </button> */}
-
                       <h5 className="text-responsive">
                         {" "}
                         Descripción: Llevas {s.count} servicio de {s.titulo} que cuesta ${" "}
-                        {s.precio}
+                        {Intl.NumberFormat('de-DE').format(s.precio)}
                       </h5>
 
                       <button
@@ -109,7 +102,7 @@ export default function Carrito() {
         <div className="eliminar-lista-total-pagar m-5">
           {serviciosCarrito.length > 0 ? (
             <div className="total-pagar mt-3">
-              <h2>Total: ${totalComprasServicios}</h2>
+              <h2>Total: $ {Intl.NumberFormat('de-DE').format(totalComprasServicios)}</h2>
               <button className="btn btn-success" onClick={() => irAhome()}>
                 IR A HOME
               </button>

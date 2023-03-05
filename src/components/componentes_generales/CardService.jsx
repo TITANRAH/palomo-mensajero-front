@@ -27,7 +27,8 @@ function CardService({ servicio }) {
           <hr />
           <div className="precio">
             <h3>
-              <b>$ {servicio.precio}</b>
+              <b>$ {Intl.NumberFormat('de-DE').format(servicio.precio)
+              }</b>
             </h3>
           </div>
           <div className="botones mt-2">

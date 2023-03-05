@@ -51,7 +51,7 @@ function Navbar() {
                   </NavLink>
 
                   <span>
-                    <strong> ${totalComprasServicios} </strong>
+                    <strong> $ {Intl.NumberFormat('de-DE').format(totalComprasServicios)} </strong>
                   </span>
                 </div>
               </>
