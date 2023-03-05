@@ -36,7 +36,7 @@ function Navbar() {
           <div className="container">
             <div className="col-auto">
               <span className="palomo">
-                <strong>Bienvenido</strong>, {usuarioGlobal.email}{" "}
+                <strong>Bienvenido</strong>, {usuarioGlobal.nombre} {usuarioGlobal.apellido}{" "}
               </span>
 
               <button onClick={logout} className="btn btn-danger">

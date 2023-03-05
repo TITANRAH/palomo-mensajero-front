@@ -489,6 +489,10 @@ a:visited {
   text-decoration: none;
 }
 
+.fa-solid{
+  color: white;
+}
+
 @media (max-width: 767px) {
   .palomo {
     display: none;
