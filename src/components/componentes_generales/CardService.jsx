@@ -33,8 +33,7 @@ function CardService({ servicio }) {
           <div className="botones mt-2">
             <button
               className="btn btn-info"
-              onClick={() => irServicio(servicio.id_servicio)}
-            >
+              onClick={() => irServicio(servicio.id_servicio)}>
               Ver Más{" "}
               <img
                 className="imagen-boton"
