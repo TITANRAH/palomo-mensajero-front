@@ -96,9 +96,16 @@ export default function CrearRoles() {
             </select>
           </div>
         </div>
-        <button onClick={createRol} className="btn btn-success mt-3">
-          ASIGNAR ROL
-        </button>
+        <div className="form-cont-btn">
+          <button onClick={createRol} className="btn btn-success mt-3">
+            ASIGNAR ROL
+          </button>
+          <button
+            onClick={() => navigate("/dashboardAdmin")}
+            className="btn btn-success mt-3">
+            VOLVER A DASHBOARD
+          </button>
+        </div>
       </div>
     </div>
   );

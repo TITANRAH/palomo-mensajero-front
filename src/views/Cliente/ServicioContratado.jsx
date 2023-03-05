@@ -120,13 +120,18 @@ export default function ServicioContratado() {
             </div>
           </div>
         </div>
-
-        <button
-          onClick={() => realizarPedido()}
-          className="btn btn-success mt-3"
-        >
-          PAGAR
-        </button>
+        <div className="form-cont-btn-cliente">
+          <button
+            onClick={() => realizarPedido()}
+            className="btn btn-success mt-3">
+            PAGAR
+          </button>
+          <button
+            onClick={() => navigate("/carrito")}
+            className="btn btn-success mt-3">
+            VOLVER A CARRITO
+          </button>
+        </div>
       </div>
     </div>
   );

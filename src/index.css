@@ -37,6 +37,7 @@ body {
 
 .servicio-contratado {
   min-height: 69vh;
+  margin: 0 0 5vh 0;
 }
 
 .tabla-crear {
@@ -493,6 +494,18 @@ a:visited {
   color: white;
 }
 
+.form-cont-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.form-cont-btn-cliente{
+
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 767px) {
   .palomo {
     display: none;
@@ -611,6 +624,12 @@ a:visited {
   .imagen-detalle {
     display: none;
   }
+
+  .form-cont-btn{
+    display: flex;
+    flex-direction: column;
+  }
+  
 }
 
 @media (max-width: 991px) {
@@ -737,4 +756,10 @@ a:visited {
     text-align: justify;
     padding-left: 10px;
   }
+
+  .form-cont-btn{
+    display: flex;
+    flex-direction: column;
+  }
+  
 }

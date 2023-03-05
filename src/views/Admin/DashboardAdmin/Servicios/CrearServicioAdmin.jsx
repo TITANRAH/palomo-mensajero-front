@@ -134,10 +134,16 @@ export default function CrearServicioAdmin() {
             </select>
           </div>
         </div>
-
-        <button onClick={createServiceAdmin} className="btn btn-success mt-3">
-          CREAR SERVICIO
-        </button>
+        <div className="form-cont-btn">
+          <button onClick={createServiceAdmin} className="btn btn-success mt-3">
+            CREAR SERVICIO
+          </button>
+          <button
+            onClick={() => navigate("/dashboardAdmin")}
+            className="btn btn-success mt-3">
+            VOLVER A DASHBOARD
+          </button>
+        </div>
       </div>
     </div>
   );
