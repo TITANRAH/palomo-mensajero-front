@@ -57,7 +57,7 @@ export default function Carrito() {
               </div>
             ) : (
               serviciosCarrito.map((s, index) => (
-                <li className="pb-0 pt-5" key={index}>
+                <li className=" " key={index}>
                   <div className="detalle-compra">
                     <div className="detalle-imagen-nombre">
                       <img
