@@ -175,9 +175,9 @@ export default function AdminRoles() {
                     onChange={handleEditRol}
                   >
                     {" "}
-                    <option value="DEFAULT">SELECCIONA EL ROL</option>
-                    <option value={2}>MENSAJERO</option>
-                    <option value={3}>ADMIN</option>
+                    <option value="DEFAULT">EL ROL ACTUAL ES: {r.id_roles == 2 ? 'MENSAJERO' : 'ADMIN'}</option>
+                    <option value={2}>ASIGNAR: MENSAJERO</option>
+                    <option value={3}>ASIGNAR: ADMIN</option>
                   </select>
                 </td>
                 <td>
