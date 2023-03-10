@@ -70,7 +70,6 @@ export default function DetalleServicio() {
                 </h5>
                 <hr />
                 <p>{servicioSel.descripcion}</p>
-
                 <div className="cont-precio-btn">
                   <h4>
                     <b>Precio : $ {Intl.NumberFormat('de-DE').format(servicioSel.precio)}</b>
