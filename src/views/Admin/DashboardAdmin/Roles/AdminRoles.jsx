@@ -175,20 +175,16 @@ export default function AdminRoles() {
                     onChange={handleEditRol}
                   >
                     {" "}
-                    <option value="DEFAULT">
-                      EL ROL ACTUAL ES:{" "}
-                      {(r.id_rol == 2 ? "MENSAJERO" : "ADMIN") ||
-                        (r.id_rol == 1 ?? "CLIENTE")}
-                    </option>
+                    <option value="DEFAULT">EL ROL ACTUAL ES: {(r.id_rol == 2 ? 'MENSAJERO' : 'ADMIN')||(r.id_rol == 1 ?? 'CLIENTE')}</option>
                     <option value={2}>ASIGNAR: MENSAJERO</option>
                     <option value={3}>ASIGNAR: ADMIN</option>
                   </select>
                 </td>
                 <td>
                   <input
-                    value={r.email_rol}
                     id="email_rol"
                     className="form-input"
+                    placeholder={r.email_rol}
                     type="text"
                     name="email_rol"
                     onChange={handleEditRol}
