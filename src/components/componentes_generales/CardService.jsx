@@ -15,7 +15,7 @@ function CardService({ servicio }) {
         <div className="cont-img-card">
         <img
           className="card-img-top"
-          src={require(`../../assets/img/${servicio.img_src}`) ?? desayuno}
+          src={require( `../../assets/img/${servicio.img_src}` == null ? desayuno : `../../assets/img/${servicio.img_src}`)}
           alt="serv"
         />
         </div>
