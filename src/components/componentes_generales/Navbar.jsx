@@ -45,7 +45,7 @@ function Navbar() {
               </button>
               {usuarioGlobal.id_rol === parseInt(1) ? (
                 <button
-                  onClick={navigate("mis_pedidos/" + usuarioGlobal.id_usuario)}
+                  onClick={()=>navigate("mis_pedidos/" + usuarioGlobal.id_usuario)}
                   className="btn btn-success"
                 >
                   Mis Pedidos
