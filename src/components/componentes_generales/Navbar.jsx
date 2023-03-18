@@ -16,9 +16,8 @@ function Navbar() {
   };
 
   const misPedidos = () => {
-
     navigate("/mis_pedidos/" + usuarioGlobal.id_usuario);
-  }
+  };
 
   return (
     <nav className="navbar">
@@ -51,12 +50,13 @@ function Navbar() {
                 Salir
               </button>
 
-
-              <NavLink to={"mis_pedidos/" + usuarioGlobal.id_usuario}>
-              <button onClick={misPedidos} className="btn btn-success">
-                Mis pedidos
-              </button>
-              </NavLink>
+              {usuarioGlobal != null ? (
+                <button onClick={misPedidos} className="btn btn-success">
+                  Mis pedidos
+                </button>
+              ) : (
+                <div></div>
+              )}
             </div>
             {usuarioGlobal.id_rol === parseInt(1) ? (
               <>
