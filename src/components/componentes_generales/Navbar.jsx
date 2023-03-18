@@ -36,12 +36,23 @@ function Navbar() {
           <div className="container">
             <div className="col-auto">
               <span className="palomo">
-                <strong>Bienvenido</strong>, {usuarioGlobal.nombre} {usuarioGlobal.apellido}{" "}
+                <strong>Bienvenido</strong>, {usuarioGlobal.nombre}{" "}
+                {usuarioGlobal.apellido}{" "}
               </span>
 
-              <button onClick={logout} className="btn btn-danger">
+              <button onClick={logout} className="btn btn-danger mr-3">
                 Salir
               </button>
+              {usuarioGlobal.id_rol === 1 ? (
+                <button
+                  onClick={navigate("mis_pedidos/" + usuarioGlobal.id_usuario)}
+                  className="btn btn-success"
+                >
+                  Mis Pedidos
+                </button>
+              ) : (
+                ""
+              )}
             </div>
             {usuarioGlobal.id_rol === parseInt(1) ? (
               <>
@@ -51,7 +62,13 @@ function Navbar() {
                   </NavLink>
 
                   <span>
-                    <strong> $ {Intl.NumberFormat('de-DE').format(totalComprasServicios)} </strong>
+                    <strong>
+                      {" "}
+                      ${" "}
+                      {Intl.NumberFormat("de-DE").format(
+                        totalComprasServicios
+                      )}{" "}
+                    </strong>
                   </span>
                 </div>
               </>
