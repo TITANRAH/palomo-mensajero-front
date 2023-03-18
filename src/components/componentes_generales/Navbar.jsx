@@ -3,12 +3,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import palomoLogo from "../../assets/iconos/paloma-mensajera.png";
 import usePalomo from "../../hooks/usePalomo";
 
-
-
 function Navbar() {
   const { usuarioGlobal, setUsuarioGlobal, totalComprasServicios } =
     usePalomo();
-    
+
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);
@@ -40,12 +38,17 @@ function Navbar() {
           <div className="container">
             <div className="col-auto">
               <span className="palomo">
-                <strong>Bienvenido</strong>, {usuarioGlobal.nombre} {usuarioGlobal.apellido}{" "}
+                <strong>Bienvenido</strong>, {usuarioGlobal.nombre}{" "}
+                {usuarioGlobal.apellido}{" "}
               </span>
 
               <button onClick={logout} className="btn btn-danger">
                 Salir
               </button>
+
+              <NavLink to={"mis_pedidos/" + usuarioGlobal.id_usuario}>
+                <span className="palomo">Mis Pedidos</span>
+              </NavLink>
             </div>
             {usuarioGlobal.id_rol === parseInt(1) ? (
               <>
@@ -54,12 +57,14 @@ function Navbar() {
                     <i className="fa-solid fa-cart-plus fa-xl"></i>
                   </NavLink>
 
-                  <NavLink to={"mis_pedidos/" + usuarioGlobal.id_usuario}>
-                  <span className="palomo">Mis Pedidos</span>
-                  </NavLink>
-
                   <span>
-                    <strong> $ {Intl.NumberFormat('de-DE').format(totalComprasServicios)} </strong>
+                    <strong>
+                      {" "}
+                      ${" "}
+                      {Intl.NumberFormat("de-DE").format(
+                        totalComprasServicios
+                      )}{" "}
+                    </strong>
                   </span>
                 </div>
               </>
