@@ -15,6 +15,11 @@ function Navbar() {
     navigate("/");
   };
 
+  const misPedidos = () => {
+
+    navigate("/mis_pedidos/" + usuarioGlobal.id_usuario);
+  }
+
   return (
     <nav className="navbar">
       <NavLink to="/">
@@ -48,7 +53,7 @@ function Navbar() {
 
 
               <NavLink to={"mis_pedidos/" + usuarioGlobal.id_usuario}>
-              <button onClick={logout} className="btn btn-success">
+              <button onClick={misPedidos} className="btn btn-success">
                 Mis pedidos
               </button>
               </NavLink>
