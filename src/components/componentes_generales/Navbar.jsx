@@ -18,7 +18,7 @@ function Navbar() {
       <NavLink to="/">
         <span className="logo">
           <img className="imagen-nav" src={palomoLogo} alt="" />
-          <span className="palomo">El Palomo mensajero</span>
+          <span className="palomo">El Palomo Mensajero</span>
         </span>
       </NavLink>
       <div>
