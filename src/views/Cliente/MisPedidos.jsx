@@ -13,11 +13,11 @@ export default function MisPedidos() {
     getPedidos(id);
   }, []);
 
-
   return (
     <>
       <div className="tabla-datos">
-        <TablaDatos servicioCon={misPedidos} />
+        {misPedidos == [] ? (<h3>No tienes pedidos realizados</h3>) : <TablaDatos servicioCon={misPedidos} />}
+
         <div className="row">
           <div className="col-6">
             <button
