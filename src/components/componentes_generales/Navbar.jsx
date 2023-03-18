@@ -54,7 +54,7 @@ function Navbar() {
                     <i className="fa-solid fa-cart-plus fa-xl"></i>
                   </NavLink>
 
-                  <NavLink to={"mis_pedidos/" + usuarioGlobal.id_rol}>
+                  <NavLink to={"mis_pedidos/" + usuarioGlobal.id_usuario}>
                   <span className="palomo">Mis Pedidos</span>
                   </NavLink>
 
