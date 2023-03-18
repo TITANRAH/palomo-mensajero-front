@@ -43,7 +43,7 @@ function Navbar() {
               <button onClick={logout} className="btn btn-danger mr-3">
                 Salir
               </button>
-              {usuarioGlobal.id_rol === 1 ? (
+              {usuarioGlobal.id_rol === parseInt(1) ? (
                 <button
                   onClick={navigate("mis_pedidos/" + usuarioGlobal.id_usuario)}
                   className="btn btn-success"
