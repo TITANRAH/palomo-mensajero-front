@@ -51,11 +51,12 @@ function Navbar() {
               </button>
 
               {usuarioGlobal.id_rol === parseInt(1) ? (
-                <button onClick={misPedidos} className="btn btn-success">
+               <> <button onClick={misPedidos} className="btn btn-success">
                   Mis pedidos
                 </button>
+                </>
               ) : (
-                <div></div>
+                ("")
               )}
             </div>
             {usuarioGlobal.id_rol === parseInt(1) ? (
