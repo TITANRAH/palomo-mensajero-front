@@ -17,14 +17,7 @@ export default function MisPedidos() {
   return (
     <>
       <div className="tabla-datos">
-
-        {misPedidos != [] ? (<TablaDatos servicioCon={misPedidos} />) :   (<div className="carrito-vacío pt-3">
-                <h4>El carrito esta vacío</h4>
-                <a className="irhome" onClick={() => irAhome()} href="/">
-                  IR A HOME
-                </a>
-              </div>)}
-        
+        <TablaDatos servicioCon={misPedidos} />
         <div className="row">
           <div className="col-6">
             <button
