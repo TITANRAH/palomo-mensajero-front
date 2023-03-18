@@ -42,12 +42,15 @@ function Navbar() {
                 {usuarioGlobal.apellido}{" "}
               </span>
 
-              <button onClick={logout} className="btn btn-danger">
+              <button onClick={logout} className="btn btn-danger mr-3">
                 Salir
               </button>
 
+
               <NavLink to={"mis_pedidos/" + usuarioGlobal.id_usuario}>
-                <span className="palomo">Mis Pedidos</span>
+              <button onClick={logout} className="btn btn-success">
+                Mis pedidos
+              </button>
               </NavLink>
             </div>
             {usuarioGlobal.id_rol === parseInt(1) ? (
