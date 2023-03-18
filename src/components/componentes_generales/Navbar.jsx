@@ -50,7 +50,7 @@ function Navbar() {
                 Salir
               </button>
 
-              {usuarioGlobal != null ? (
+              {usuarioGlobal.id_rol === parseInt(1) ? (
                 <button onClick={misPedidos} className="btn btn-success">
                   Mis pedidos
                 </button>
