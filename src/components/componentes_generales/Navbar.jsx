@@ -1,10 +1,14 @@
+import { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import palomoLogo from "../../assets/iconos/paloma-mensajera.png";
 import usePalomo from "../../hooks/usePalomo";
 
+
+
 function Navbar() {
   const { usuarioGlobal, setUsuarioGlobal, totalComprasServicios } =
     usePalomo();
+    
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);
@@ -48,6 +52,10 @@ function Navbar() {
                 <div className="col-auto">
                   <NavLink to="carrito">
                     <i className="fa-solid fa-cart-plus fa-xl"></i>
+                  </NavLink>
+
+                  <NavLink to={"mis_pedidos/" + usuarioGlobal.id_rol}>
+                  <span className="palomo">Mis Pedidos</span>
                   </NavLink>
 
                   <span>
