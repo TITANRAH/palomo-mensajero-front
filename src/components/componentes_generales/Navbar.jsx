@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   const misPedidos = () => {
-    navigate("/mis_pedidos/" + usuarioGlobal.id_usuario);
+    navigate("mis_pedidos/" + usuarioGlobal.id_usuario);
   };
 
   return (
