@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import palomoLogo from "../../assets/iconos/paloma-mensajera.png";
 import usePalomo from "../../hooks/usePalomo";
@@ -6,17 +5,12 @@ import usePalomo from "../../hooks/usePalomo";
 function Navbar() {
   const { usuarioGlobal, setUsuarioGlobal, totalComprasServicios } =
     usePalomo();
-
   const navigate = useNavigate();
   const logout = () => {
     setUsuarioGlobal([]);
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
     navigate("/");
-  };
-
-  const misPedidos = () => {
-    navigate("mis_pedidos/" + usuarioGlobal.id_usuario);
   };
 
   return (
@@ -42,17 +36,12 @@ function Navbar() {
           <div className="container">
             <div className="col-auto">
               <span className="palomo">
-                <strong>Bienvenido</strong>, {usuarioGlobal.nombre}{" "}
-                {usuarioGlobal.apellido}{" "}
+                <strong>Bienvenido</strong>, {usuarioGlobal.nombre} {usuarioGlobal.apellido}{" "}
               </span>
 
-              <button onClick={logout} className="btn btn-danger mr-3">
+              <button onClick={logout} className="btn btn-danger">
                 Salir
               </button>
-
-              {/* <button onClick={misPedidos} className="btn btn-success">
-                Mis pedidos
-              </button> */}
             </div>
             {usuarioGlobal.id_rol === parseInt(1) ? (
               <>
@@ -62,13 +51,7 @@ function Navbar() {
                   </NavLink>
 
                   <span>
-                    <strong>
-                      {" "}
-                      ${" "}
-                      {Intl.NumberFormat("de-DE").format(
-                        totalComprasServicios
-                      )}{" "}
-                    </strong>
+                    <strong> $ {Intl.NumberFormat('de-DE').format(totalComprasServicios)} </strong>
                   </span>
                 </div>
               </>
